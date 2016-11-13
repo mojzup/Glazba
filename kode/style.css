@@ -198,3 +198,17 @@ footer {
 	border: 3px solid #f1f1f1;
 	padding: 10px;
 }
+
+.artikelPodrobnosti{
+	display: flex;
+	flex-direction: row;
+}
+.artikelPodrobnosti2{
+	display: flex;
+	flex-direction: column;
+}
+
+.artikelNov{
+	border: 3px solid #f1f1f1;
+	padding: 10px;
+}
