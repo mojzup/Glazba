@@ -1,0 +1,65 @@
+body {
+    font-family: "Helvetica";
+}
+
+h1 {
+    color: navy;
+    margin-left: 10px;
+}
+ .prijava{
+ 	display: flex;
+ 	justify-content: flex-end;
+ }
+.glavca{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	background-color: lightblue;
+}
+.meniji{
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: lightblue;
+}
+.bigPic{
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+}
+.othrPic{
+	display:flex;
+	justify-content: center;
+}
+footer { 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: lightblue;
+    margin-top: 10px;
+}
+.Ppri{
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	border: 3px solid #f1f1f1;
+	width: 30%;
+	padding: 10px;
+	line-height: 30px;
+}
+.PpriReg{
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.Ppri2{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: lightblue;
+	line-height: 30px;
+}
