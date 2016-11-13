@@ -171,3 +171,30 @@ footer {
 	border: 3px solid #f1f1f1;
 	padding: 10px;
 }
+
+.domacaAdmin{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.domacaAdmin2{
+	display: flex;
+	justify-content: center;
+}
+
+.izdelki{
+	display: flex;
+	flex-direction: column;
+	border: 3px solid #f1f1f1;
+	padding: 10px;
+}
+
+.poslovalnica{
+	display: flex;
+	flex-direction: column;
+	margin-left: 35%;
+	width: 30%;
+	border: 3px solid #f1f1f1;
+	padding: 10px;
+}
