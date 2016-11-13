@@ -143,9 +143,3 @@ footer {
 	border: 3px solid #f1f1f1;
 	padding: 10px;
 }
-.blagajnaPodatki{
-	display: flex;
-	flex-direction: column;
-	border: 3px solid #f1f1f1;
-	padding: 10px;
-}
