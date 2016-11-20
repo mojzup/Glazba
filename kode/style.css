@@ -3,27 +3,122 @@ body {
 }
 
 h1 {
-    color: navy;
-    margin-left: 10px;
+    vertical-align: middle;
 }
  .prijava{
+ 	float: right;
+ 	padding-right: 15%;
  	display: flex;
- 	justify-content: flex-end;
+ 	justify-content: space-between;
+ }
+ 
+ #prijavaG{
+ 	color: black;
+ 	text-decoration: none;
  }
 .glavca{
 	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding-left: 10%;
+	padding-right: 10%;
+	width: 80%;
+	background-color: #660066;
+}
+
+.glavca2{
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 100%;
-	background-color: lightblue;
 }
+
+/* SEARCH */
+.searchB{
+ 	width: 450px;
+ 	display: flex;
+ 	justify-content: center;
+ 	vertical-align: middle;
+ 	white-space: nowrap;
+
+}
+
+.searchB input#search{
+  width: 450px;
+  height: 40px;
+  background: #ffffff;
+  border: none;
+  font-size: 12pt;
+  float: left;
+  color: #63717f;
+  padding-left: 10px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+
+}
+
+#magglass{
+background-image: linear-gradient(#DDCE36, #BDAD13);
+filter: progid:DXImageTransform.Microsoft.gradient
+    (startColorStr='#DDCE36', EndColorStr='#BDAD13');
+transition: all .55s ease;
+ border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+ border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+float: left;
+ height: 40px;
+ width: 50px;
+ color: #ffffff;
+ font-size: 12pt;
+}
+
+#magglass:hover {
+	background-image: linear-gradient(#DDCE36, #796E00);
+filter: progid:DXImageTransform.Microsoft.gradient
+    (startColorStr='#DDCE36', EndColorStr='#796E00');
+
+}
+#magglass:active {
+	background-image: linear-gradient(#BDAD13, #DDCE36);
+filter: progid:DXImageTransform.Microsoft.gradient
+    (startColorStr='#BDAD13', EndColorStr='#DDCE36');
+}
+
+#kos{
+	text-decoration: none;
+	color: white;
+	/*vertical-align: middle;*/
+	float: center;
+	font-size: 13;
+}
+
+#meni{
+	text-decoration: none;
+	color: white;
+	/*vertical-align: middle;*/
+	float: center;
+	font-size: 13;
+	padding: 10px;
+}
+
+.kosarica{
+	border-radius: 5px;
+	padding: 10px;
+	vertical-align: middle;
+}
+
+.kosarica:hover {
+	background-color: #4F004F;
+	
+}
+
 .meniji{
-	margin-top: 10px;
 	display: flex;
-	justify-content: center;
+	padding-left: 30%;
+	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
-	background-color: lightblue;
+	background-color: #660066;
 }
 .bigPic{
 	margin: 10px;
