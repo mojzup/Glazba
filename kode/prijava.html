@@ -7,26 +7,50 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-
-	<h1 style="text-align: center;">Glazba</h1>
-		<form>
-	  		<div class="Ppri">
-	  			<div class="PpriReg">
-		  			<a href=""><b>Prijava</b></a>
-		  			<a href=""><b>Registracija</b></a>
-	  			</div>
-		    	<label><b>Uporabniško ime</b></label>
-		    	<input type="text" placeholder="Vnesi uporabniško ime" name="uname" required>
-	
-			    <label><b>Geslo</b></label>
-			    <input type="password" placeholder="Vnesi geslo" name="psw" required>
-		        
-			    <button type="submit">Prijavi se</button>
-			    <div class="Ppri2">
-				    <div><input type="checkbox" checked="checked"> Zapomni si me</div>
-				    <a href="#">Pozabljeno geslo?</a>
-			    </div>
-	  		</div>
-		</form>
+		<h1><a href="index.html"><img src="logobel.png" width="128.4" height="55.6" alt"Glazba"></a></h1>
+		<div id="containerPri">
+			<div id="PpriReg">
+				<button onclick="toggle_visibility('prijavi','registriraj', 'gPrijava','gRegistracija');" id="gPrijava">Prijava</button>
+				<button onclick="toggle_visibility('registriraj','prijavi','gRegistracija', 'gPrijava');" class="to_register" id="gRegistracija">Registracija</button>
+			</div>
+			<div id="prijavi">
+				<form>
+				    <p><input type="text" placeholder="Vnesi uporabniško ime" name="uname" required></p>
+					<p><input type="password" placeholder="Vnesi geslo" name="psw" minlength="6" required></p>    
+					<p class="login button"><input type="submit" value="Prijavi se"></p>
+					<div class="Ppri2">
+						<p class="keeplogin"><input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" checked="checked">
+						<label for="loginkeeping">Zapomni si me</label></p>
+						<p class="pozGeslo"><a href="#">Pozabljeno geslo?</a></p>
+					</div>
+				</form>
+			</div>
+			<div id="registriraj">
+				<form>
+			    	<p><input type="text" placeholder="Vnesi uporabniško ime" name="uname" required></p>	
+				    <p><input type="password" placeholder="Vnesi geslo" name="psw" required></p>
+				    <p><input type="password" placeholder="Ponovno vnesi geslo" name="conpsw" required></p>
+				    <p><input type="email" placeholder="Vnesi e-poštni naslov" name="mail" required></p>
+				    <p class="login button"><input type="submit" value="Registriraj se"></p>
+				</form>
+			</div>
+		</div>
+		<script type="text/javascript">
+   		function toggle_visibility(id,id2,id3,id4) {
+       var e = document.getElementById(id);
+       var f = document.getElementById(id2);
+       var g = document.getElementById(id3);
+       var h = document.getElementById(id4);
+          e.style.display = 'block';
+          f.style.display = 'none';
+          g.style.borderBottom = 'none';
+          g.style.color = '#330033';
+          g.style.background = "white";
+          h.style.color = 'grey';
+          h.style.borderBottom = '1px solid #cccccc';
+          h.style.background = "#dbdbdb";
+          
+   }
+</script>
 	</body>
 </html>

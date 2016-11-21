@@ -4,18 +4,10 @@ body {
 
 h1 {
     vertical-align: middle;
+   text-align: center;
 }
- .prijava{
- 	float: right;
- 	padding-right: 15%;
- 	display: flex;
- 	justify-content: space-between;
- }
+
  
- #prijavaG{
- 	color: black;
- 	text-decoration: none;
- }
 .glavca{
 	display: flex;
 	justify-content: space-around;
@@ -73,15 +65,14 @@ float: left;
 }
 
 #magglass:hover {
-	background-image: linear-gradient(#DDCE36, #796E00);
-filter: progid:DXImageTransform.Microsoft.gradient
-    (startColorStr='#DDCE36', EndColorStr='#796E00');
-
-}
-#magglass:active {
 	background-image: linear-gradient(#BDAD13, #DDCE36);
 filter: progid:DXImageTransform.Microsoft.gradient
     (startColorStr='#BDAD13', EndColorStr='#DDCE36');
+
+
+}
+#magglass:active {
+	    background-color: #796E00;
 }
 
 #kos{
@@ -136,26 +127,136 @@ footer {
     background-color: lightblue;
     margin-top: 10px;
 }
-.Ppri{
+/*PRIJAVA IN REGISTRACIJA*/
+
+#prijavi{
+	display: block;	
+	padding-left: 15px;
+	padding-right: 15px;
+}
+#registriraj{	
+	display: none;
+	padding-left: 15px;
+	padding-right: 15px;
+
+}
+
+#containerPri{
 	margin: auto;
 	display: flex;
 	flex-direction: column;
-	border: 3px solid #f1f1f1;
+	border: 1px solid #cccccc;
 	width: 30%;
-	padding: 10px;
+	padding-bottom: 15px;
 	line-height: 30px;
+	border-radius: 3px;
 }
-.PpriReg{
-
+#PpriReg{
 	display: flex;
-	justify-content: space-around;
-	align-items: center;
 }
+
+#PpriReg button{
+	text-decoration: none;
+	padding: 10px;
+	margin: 0px;
+	color: grey;
+	font-weight: normal;
+	background-color: white;
+	cursor: pointer;
+	outline: 0;
+	width: 100%;
+	font-size: 17px;
+}
+
+#PpriReg button{
+	border:none;
+	padding: 10px;
+	border-bottom: 1px solid #cccccc;
+	width: 100%;
+}
+#PpriReg #gPrijava{
+	border-right: 1px solid #cccccc;
+	border-bottom: none;
+	color: #330033;
+}
+
+#PpriReg #gRegistracija{
+
+	background-color: #dbdbdb;
+}
+
+#PpriReg button input:active{
+	border-color: red;
+	padding: 10px;
+	width: 100%;
+}
+#containerPri input:not([type="checkbox"]){
+	width: 95%;
+	margin-top: 4px;
+	padding: 10px 5px 10px 10px;	
+	border: 1px solid #a3a3a3;
+	box-sizing : content-box;
+	border-radius: 3px;
+	transition: all 0.2s linear;
+}
+#containerPri input:not([type="checkbox"]):active,
+#containerPri input:not([type="checkbox"]):focus{
+	border: 1px solid #796E00;
+	background: rgba(238, 236, 240, 0.2);	
+	box-shadow: 0px 1px 4px 0px #796E00 ;
+} 
+ #containerPri p.button input{
+ 	background-image: linear-gradient(#DDCE36, #BDAD13);
+	filter: progid:DXImageTransform.Microsoft.gradient
+    (startColorStr='#DDCE36', EndColorStr='#BDAD13');
+	width: 95%;
+	cursor: pointer;	
+	color: #000000;
+	font-size: 15px;	
+	margin-bottom: 10px;	
+	border-radius: 3px;	
+
+	transition: all 0.2s linear;
+}
+#containerPri p.button input:hover{
+	background: #BDAD13;
+}	
+#containerPri p.button input:active,
+#containerPri p.button input:focus{
+	background: #BDAD13;
+	position: relative;
+	top: 1px;
+
+}
+
+.keeplogin input,
+.keeplogin label{
+	font-size: 12px;	
+}
+.keeplogin input#loginkeeping{
+	margin-right: 5px;
+}
+.keeplogin label{
+	width: 80%;
+}
+#containerPri p.pozGeslo a:hover,
+#containerPri p.pozGeslo a:active{
+	font-size: 12px;
+	text-decoration: underline;
+	color: black;
+}
+#containerPri p.pozGeslo a{
+	font-size: 12px;
+	text-decoration: none;
+	color: black;
+}
+
 .Ppri2{
+	margin-top: -30px;
+	margin-bottom:-20px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: lightblue;
 	line-height: 30px;
 }
 
