@@ -5,69 +5,95 @@
 		<meta name="author" content="Mojca Zupančič">
 		<title>Glazba - Kjer ni dovolj le glasba</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="script.js" type="text/javascript"></script>
 	</head>
 
-	<body>
-
-		<div class="prijava">
-			<a href="prijava.html" >Prijava</a>
-			<a href="">Registracija</a>
+	<body >
+		<div class="header">
+			<div class="glavca flex-center">
+				<div class="block"><a href="index.html"><img src="slike/logo2.png" alt="Glazba"></a></div>
+				<div class="search-box flex-row">
+					<div class="stretch"><input type="search" name="iskalnik" class="polje"><a href=""></a></div>
+					<div class="normal"><input type="image" src="slike/magglass.png" alt="Išči" class="gumb oranzen"/></div>
+				</div>
+				<div class="block prij"> 
+					<a href="prijava.html" >Prijava</a>
+					<label>|</label>
+					<a href="" >Registracija</a>
+				</div>				
+			</div>
 		</div>
-		<div class="glavca">
-			<h1>Glazba</h1>
-			<form><input type="search" name="iskalnik"><a href="">Išči</a></form>
-			<a href="">Košarica</a>
+		<div class="header2">
+			<div class="glavca osebno">
+				<div class="block"></div>
+				<div class="block2 osebno flex-sp-between">
+					<a href="kosara.html" >Košarica</a>
+					<a href="seznam-zelja.html" >Seznam želja</a>
+					<a href="zgodovina.html" >Zgodovina</a>
+					<a href="nastavitve.html" >Nastavitve</a>
+				</div>
+				<div class="block"></div>
+			</div>
+		</div>		
+		<div class="body">	
+			<h2>Nastavitve</h2>
+			<div class="seznam nastavitve flex-col">
+				<h3>Spremeni prikazno sliko</h3>
+				<div class="camera">
+					<div class="flex-row">
+						<video id="video" width="213" height="160" autoplay></video>
+						<canvas id="canvas" width="213" height="160"></canvas>
+					</div>
+					<input type="submit" id="snap" class="gumb modr nastavitve" value="Zajemi sliko">
+	  			</div>
+				<h3>Spremeni geslo</h3>
+				<label>Staro geslo</label>
+				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nast" required>
+				<label>Novo geslo</label>
+				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nastavitve" required>
+				<label>Potrdi geslo</label>
+				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nastavitve" required>
+				<h3>Spremeni naslov</h3>
+				<label>Ime Priimek</label>
+				<input type="text" placeholder="Vnesi ime in priimek" name="uname" class="polje nastavitve" required>
+				<label>Ulica in hišna številka</label>
+				<input type="text" placeholder="Vnesi ulico in hišno številko" name="uname" class="polje nastavitve" required>
+				<label>Pošta in poštna številka</label>
+				<input type="text" placeholder="Vnesi pošto in poštno številko" name="uname" class="polje nastavitve" required>
+				<label>Država</label>
+				<input type="text" placeholder="Vnesi državo" name="uname" class="polje nastavitve" required>
+				<h3>Spremeni podatke o plačilni kartici</h3>
+				<label>Ime nosilca</label>
+				<input type="text" placeholder="Vnesi ime nosilca kartice" name="uname" class="polje nastavitve" required>
+				<label>Številka kartice</label>
+				<input type="text" placeholder="Vnesi številko kartice" name="uname" class="polje nastavitve" required>
+				<label>Veljavno do</label>
+				<input type="text" placeholder="Vnesi pač to" name="uname" class="polje nastavitve" required>
+				<label>Varnostna koda</label>
+				<input type="text" placeholder="Vnesi varnostno kodo" name="uname" class="polje nastavitve" required>
+				<input type="submit" class="gumb modr nastavitve" value="Shrani">	
+			</div>
 		</div>
-		<div class="meniji">
-
-			<a href="">Zbirka</a>
-			<a href="">Izvajalec</a>
-			<a href="">Žanr</a>
-		</div>
-				<h2>Nastavitve</h2>
-		
-		<div class="nastavitve">
-			<b>Spremeni geslo</b>
-			<label>Staro geslo</label>
-			<input type="password" placeholder="Vnesi geslo" name="psw" required>
-			<label>Novo geslo</label>
-			<input type="password" placeholder="Vnesi geslo" name="psw" required>
-			<label>Potrdi geslo</label>
-			<input type="password" placeholder="Vnesi geslo" name="psw" required>
-			<b>Spremeni naslov</b>
-			<label>Ime Priimek</label>
-			<input type="text" placeholder="Vnesi ime in priimek" name="uname" required>
-			<label>Ulica in hišna številka</label>
-			<input type="text" placeholder="Vnesi ulico in hišno številko" name="uname" required>
-			<label>Pošta in poštna številka</label>
-			<input type="text" placeholder="Vnesi pošto in poštno številko" name="uname" required>
-			<label>Država</label>
-			<input type="text" placeholder="Vnesi državo" name="uname" required>
-			<b>Spremeni podatkp o plačilni kartici</b>
-			<label>Ime nosilca</label>
-			<input type="text" placeholder="Vnesi ime nosilca kartice" name="uname" required>
-			<label>Številka kartice</label>
-			<input type="text" placeholder="Vnesi številko kartice" name="uname" required>
-			<label>Veljavno do</label>
-			<input type="text" placeholder="Vnesi pač to" name="uname" required>
-			<label>Varnostna koda</label>
-			<input type="text" placeholder="Vnesi varnostno kodo" name="uname" required>
-			<button type="submit">Shrani</button>
-
-			
-		</div>
-		<footer>
-		  <ul>
-		  <li><b>Kontakt</b></li>
-		  <li>Glazba d.o.o.</li>
-		  <li>+386 31 807 118</li>
-		  <li>info@glazba.com</li>
-		  </ul>
-		  <ul>
-		  <li><b>O podjetju</b></li>
-		  <li><a href="">Zbirka</a></li>
-		  <li><a href="">Lokacija</a></li>
-		  </ul>
+	<footer class="footer">
+			<div class="container-footer flex-sp-between">
+			  	<div class="column-footer1">
+				  	<p>Glazba d.o.o.</p>
+				  	<p>Št. podjetja: 5483739</p>
+				  	<p>VAT: 473 029 390</p>
+				  	<p>−</p>
+				  	<p>&copy; 2016 Glazba d.o.o.</p>
+				 </div>
+			  	<div class="column-footer2">
+				  	<p>t: +386 31 361 938</p>
+				  	<p>t: +386 40 640 064</p>
+					<p>e: info@glazba.com</p>
+				</div>
+				<div class="column-footer3">
+				  	<p>Pot v Frgelovo 54B</p>
+				  	<p>2255 Sveti Andraž v Slovenskih goricah</p>
+					<p>Slovenija</p>
+				</div>
+			 </div>
 		</footer>
 	</body>
 	
