@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="Mojca Zupančič">
+		<title>Glazba - Kjer ni dovolj le glasba</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="script.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id ="logosr"><a href="index.html"><img src="slike/logo1.png" alt="Glazba"></a></div>
+		<div class="containerPri flex-col">
+			<div class="PpriReg flex-row">
+				<input type="submit" onclick="toggle_visibility('prijavi','registriraj', 'gPrijava','gRegistracija');" id="gPrijava" value="Prijava">
+				<input type="submit" onclick="toggle_visibility('registriraj','prijavi','gRegistracija', 'gPrijava');" id="gRegistracija" value="Registracija">
+			</div>
+			<div id="prijavi">
+				<form>
+				    <input type="text" placeholder="Vnesi uporabniško ime" name="uname" class="polje" required>
+					<input type="password" placeholder="Vnesi geslo" name="psw" minlength="6" class="polje" required>  
+					<input type="submit" value="Prijavi se" class="gumb oranzen prij">
+					<div class="Ppri2 flex-sp-between">
+						<p class="keeplogin"><input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" checked="checked">
+						<label for="loginkeeping">Zapomni si me</label>
+						<p class="pozGeslo"><a href="#">Pozabljeno geslo?</a>
+					</div>
+				</form>
+			</div>
+			<div id="registriraj" >
+				<form>
+			    	<input type="text" placeholder="Izberi uporabniško ime" name="uname" class="polje" required>	
+				    <input type="password" placeholder="Izberi geslo" name="psw" class="polje" required>
+				    <input type="password" placeholder="Potrdi geslo" name="conpsw" class="polje" required>
+				    <input type="email" placeholder="Vnesi e-poštni naslov" name="mail" class="polje" required>
+				    <p class="login button"><input type="submit" value="Registriraj se" class="gumb oranzen prij">
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
