@@ -6,59 +6,109 @@
 		<title>Glazba - Kjer ni dovolj le glasba</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-
-	<body>
-
-		<div class="prijava">
-			<a href="prijava.html" >Prijava</a>
-			<a href="">Registracija</a>
+	<div class="header">
+			<div class="glavca flex-center">
+				<div class="block"><a href="index.html"><img src="slike/logo2.png"  alt="Glazba"></a></div>
+				<div class="search-box flex-row">
+					<div class="stretch"><input type="search" name="iskalnik" class="polje"><a href=""></a></div>
+					<div class="normal"><input type="image" src="slike/magglass.png" alt="Išči" class="gumb oranzen"/></div>
+				</div>
+				<div class="block prij"> 
+					<a href="prijava.html" >Prijava</a>
+					<label>|</label>
+					<a href="" >Registracija</a>
+				</div>				
+			</div>
+			<div class="glavca meni">
+				<div class="block"></div>
+				<div class="block2">
+					<a href="seznam.html" >Zbirka</a>
+					<a href="izvajalec.html" >Izvajalci</a>
+					<a href="zanr.html" >Zvrsti</a>
+				</div>
+				<div class = "block index-kosarica flex-row">
+					<a href="kosara.html" class="cart"><img src="slike/cart.png" alt="cart" style="width:30px;height:30px;"></a>
+					<a href="kosara.html" class="cart-text">Košarica</a>
+				</div>	
+			</div>
 		</div>
-		<div class="glavca">
-			<h1>Glazba</h1>
-			<form><input type="text" name="iskalnik"><a href="">Išči</a></form>
-			<a href="">Košarica</a>
-		</div>
-		<div class="meniji">
-
-			<a href="">Zbirka</a>
-			<a href="">Izvajalec</a>
-			<a href="">Žanr</a>
-		</div>
-			<a href="">< Nazaj</a>
-			<div class="artikel">
-				<div class="artikelZgori">
-					<img src="orchid-the-mouths-of-madness.jpg" alt="Mouths Of Madness" style="width:20%;height:20%;">
-					<div class="artikelPodatki">
-						<h3>Ime artikla</h3>
+		<div class="body">
+			<div class="potka">
+				<a href="index.html">glazba</a><label> / </label><a href="seznam.html">Zbirka</a><label> / </label><label class="klikpotka">Orchid - The Mouths of Madness</label>
+			</div>
+			<div class="artikel flex-col">
+				<div class="zgori flex-row">
+					<img src="slike/orchid-the-mouths-of-madness.jpg" alt="Mouths Of Madness" style="width:300px;height: 300px;">
+					<div class="artikelPodatki album flex-col-sp-between">
+						<div><label class="artikelIme">The Mouths of Madness</label><label>(2013)</label></div>
+						<a href="izvajalec2.html" class="link izvajalec album">Orchid</a>
 						<form>
-	  						Količina:
-	  						<input type="number" name="quantity" min="1" max="5">
+		  					<label class="artikelOznaka druga">Količina:</label>
+		  					<input type="text" name="quantity"  pattern="[0-9]{1,2}" class="polje artikel">
+		  					<label class="artikelZaloga">na zalogi</label>
 						</form>
-						<div class="artikelCena">
-							Cena:
-							<button type="submit">Dodaj v košarico</button>
-							<button type="submit">Dodaj na seznam želja</button>
+						<div class="artikelPodatki2">
+							<div><label class="artikelOznaka">Cena:</label><label class="artikelCena">15 €</label></div>
+							<input type="submit" class="gumb modr artikel" Value="Dodaj v košarico">
+							<input type="submit" class="gumb svmodr artikel" Value="Dodaj na seznam želja">
 						</div>
-
 					</div>
 				</div>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hoc non est positum in nostra actione. Easdemne res? Nemo igitur esse beatus potest. Pudebit te, inquam, illius tabulae, quam Cleanthes sane commode verbis depingere solebat.
-
-				Sed quae tandem ista ratio est? Ergo hoc quidem apparet, nos ad agendum esse natos.
+				<div class="artikelVsebina">
+					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
+					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
+					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
+					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
+					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
+					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
+				</div>
+				<label class="pesmioznaka">Seznam pesmi</label>
+				<div class=" pesmivse flex-sp-between">
+					<ol class="pesmi">
+						<li>Mouths of Madness</li>
+						<li>Marching Dogs of War</li>
+						<li>Silent One</li>
+						<li>Nomad</li>
+						<li>Mountains of Steel</li>
+						<li>Leaving It All Behind</li>
+						<li>Loving Hand of God</li>
+						<li>Wizard of War</li>
+						<li>See You on the Other Side</li>
+					</ol>
+					<ul class="pesmi">
+						<li>5:50</li>
+						<li>5:29</li>
+						<li>7:25</li>
+						<li>6:21</li>
+						<li>6:57</li>
+						<li>7:20</li>
+						<li>6:10</li>
+						<li>3:19</li>
+						<li>7:16</li>
+					</ul>
+				</div>
 			</div>
-
-		<footer>
-		  <ul>
-		  <li><b>Kontakt</b></li>
-		  <li>Glazba d.o.o.</li>
-		  <li>+386 31 807 118</li>
-		  <li>info@glazba.com</li>
-		  </ul>
-		  <ul>
-		  <li><b>O podjetju</b></li>
-		  <li><a href="">Zbirka</a></li>
-		  <li><a href="">Lokacija</a></li>
-		  </ul>
+		</div>
+		<footer class="footer">
+			<div class="container-footer flex-sp-between">
+			  	<div class="column-footer1">
+				  	<p>Glazba d.o.o.</p>
+				  	<p>Št. podjetja: 5483739</p>
+				  	<p>VAT: 473 029 390</p>
+				  	<p>−</p>
+				  	<p>&copy; 2016 Glazba d.o.o.</p>
+				 </div>
+			  	<div class="column-footer2">
+				  	<p>t: +386 31 361 938</p>
+				  	<p>t: +386 40 640 064</p>
+					<p>e: info@glazba.com</p>
+				</div>
+				<div class="column-footer3">
+				  	<p>Pot v Frgelovo 54B</p>
+				  	<p>2255 Sveti Andraž v Slovenskih goricah</p>
+					<p>Slovenija</p>
+				</div>
+			 </div>
 		</footer>
 	</body>
 	
