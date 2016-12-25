@@ -1,0 +1,29 @@
+<?php $__env->startSection('page-content'); ?>
+
+<div id ="logosr"><a href="<?php echo route('home'); ?>"><img src="<?php echo e(asset('slike/logo1.png')); ?>" alt="Glazba" ></a></div>
+
+
+	<div class="containerPri flex-col">
+		<div class="PpriReg flex-row">
+			<?php echo link_to_route('get_login', 'Prijava', null, array('id' => 'gPrijava', 'class' => 'PpriRegBut'));; ?>
+
+			<?php echo link_to_route('get_register', 'Registracija', null, array('id' => 'gRegistracija', 'class' => 'PpriRegBut'));; ?>
+
+		</div>
+		<div id="prijavi">
+		<?php echo Form::open(['route' => 'post_login', 'id' => 'login-form']); ?>
+
+			<?php echo Form::text('uname', null, [ 'class' => ' polje', 'placeholder' => 'Vnesi uporabniško ime', 'required' ] ); ?>
+
+			<?php echo Form::password('psw', [ 'class' => ' polje', 'placeholder' => 'Vnesi geslo', 'required' ] ); ?>
+
+			<?php echo Form::button('Prijavi se', ['class' => 'gumb oranzen prij', 'type' => 'submit' ] ); ?>
+
+			<?php echo Form::close(); ?>
+
+		</div>
+	</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.masters.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

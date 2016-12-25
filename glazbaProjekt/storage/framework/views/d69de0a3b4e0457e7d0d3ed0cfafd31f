@@ -1,0 +1,31 @@
+<?php $__env->startSection('page-content'); ?>
+
+<div id ="logosr"><a href="<?php echo route('home'); ?>"><img src="<?php echo e(asset('slike/logo1.png')); ?>" alt="Glazba" ></a></div>
+
+
+	<div class="containerPri flex-col">
+		<div class="PpriReg flex-row">
+			<?php echo link_to_route('get_login', 'Prijava', null, array('id' => 'gRegistracija', 'class' => 'PpriRegBut'));; ?>
+
+			<?php echo link_to_route('get_register', 'Registracija', null, array('id' => 'gPrijava', 'class' => 'PpriRegBut'));; ?>
+
+		</div>
+		<div id="prijavi">
+		<?php echo Form::open(['route' => 'post_register', 'id' => 'registration-form']); ?>
+
+			<?php echo Form::text('uname', null, [ 'class' => ' polje', 'placeholder' => 'Izberi uporabniško ime', 'required' ] ); ?>
+
+			<?php echo Form::email('mail', null, ['class' => 'polje', 'placeholder' => 'Vnesi e-poštni naslov', 'required' ] ); ?>
+
+			<?php echo Form::password('psw', [ 'class' => ' polje', 'placeholder' => 'Izberi geslo', 'required' ] ); ?>
+
+			<?php echo Form::button('Registriraj se', ['class' => 'gumb oranzen prij', 'type' => 'submit' ] ); ?>
+
+			<?php echo Form::close(); ?>
+
+		</div>
+	</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.masters.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

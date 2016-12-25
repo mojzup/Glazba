@@ -1,0 +1,42 @@
+[2016-12-24 22:11:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function link_to_route()' in C:\xampp\htdocs\glazbaProjekt\storage\framework\views\84d227a3ef319e99542ff54174318cd7:11
+Stack trace:
+#0 {main}  
+[2016-12-24 22:21:04] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function link_to_route()' in C:\xampp\htdocs\glazbaProjekt\storage\framework\views\84d227a3ef319e99542ff54174318cd7:11
+Stack trace:
+#0 {main}  
+[2016-12-24 22:44:12] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Collective\Html\HtmlServiceProvider' not found' in C:\xampp\htdocs\glazbaProjekt\vendor\compiled.php:6466
+Stack trace:
+#0 {main}  
+[2016-12-24 22:48:15] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Collective\Html\HtmlServiceProvider' not found' in C:\xampp\htdocs\glazbaProjekt\vendor\compiled.php:6466
+Stack trace:
+#0 {main}  
+[2016-12-24 22:55:17] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Collective\Html\HtmlServiceProvider' not found' in C:\xampp\htdocs\glazbaProjekt\vendor\compiled.php:6466
+Stack trace:
+#0 {main}  
+[2016-12-24 22:57:32] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Collective\Html\HtmlServiceProvider' not found' in C:\xampp\htdocs\glazbaProjekt\vendor\compiled.php:6466
+Stack trace:
+#0 {main}  
+[2016-12-24 22:57:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Collective\Html\HtmlServiceProvider' not found' in C:\xampp\htdocs\glazbaProjekt\vendor\compiled.php:6466
+Stack trace:
+#0 {main}  
+[2016-12-24 22:58:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Illuminate\Html\HtmlServiceProvider' not found' in C:\xampp\htdocs\glazbaProjekt\vendor\compiled.php:6466
+Stack trace:
+#0 {main}  
+[2016-12-24 22:58:48] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Illuminate\Html\HtmlServiceProvider' not found' in C:\xampp\htdocs\glazbaProjekt\vendor\compiled.php:6466
+Stack trace:
+#0 {main}  
+[2016-12-24 23:00:16] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Illuminate\Html\HtmlServiceProvider' not found' in C:\xampp\htdocs\glazbaProjekt\vendor\compiled.php:6466
+Stack trace:
+#0 {main}  
+[2016-12-24 23:07:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Foundation\Application::getCachedCompilePath()' in C:\xampp\htdocs\glazbaProjekt\vendor\laravel\framework\src\Illuminate\Foundation\Console\ClearCompiledCommand.php:28
+Stack trace:
+#0 {main}  
+[2016-12-24 23:10:26] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Foundation\Application::getCachedCompilePath()' in C:\xampp\htdocs\glazbaProjekt\vendor\laravel\framework\src\Illuminate\Foundation\Console\ClearCompiledCommand.php:28
+Stack trace:
+#0 {main}  
+[2016-12-24 23:17:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Illuminate\Html\HtmlServiceProvider' not found' in C:\xampp\htdocs\glazbaProjekt\vendor\laravel\framework\src\Illuminate\Foundation\ProviderRepository.php:150
+Stack trace:
+#0 {main}  
+[2016-12-24 23:23:07] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Collective\Html\HtmlServiceProvider' not found' in C:\xampp\htdocs\glazbaProjekt\vendor\laravel\framework\src\Illuminate\Foundation\ProviderRepository.php:150
+Stack trace:
+#0 {main}  
