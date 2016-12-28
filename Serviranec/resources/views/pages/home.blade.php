@@ -1,0 +1,58 @@
+@extends('layouts.masters.main')
+@section('page-content')
+	@include('layouts.partials.nav')
+	<div class="body">
+		<div class="index-featured">
+			<h3>Vroča ponudba</h3>
+				<div class="featured">
+					<a href="artikel.html"><img src="slike/aal5.jpg" alt="themadnessofmany" style="width:230px;height:230px;"></a>
+					<div class="flex-col-sp-around featured">
+						<a href="izvajalec2.html" class="link izvajalec featured">Animals as Leaders</a>
+						<a href="artikel.html" class="link album featured">The Madness of Many</a>
+						<label>16.4 €</label>
+						<input type="submit" value="Dodaj v košarico" class="gumb oranzen featured">
+					</div>
+				</div>
+		</div>
+		<div class="index-featured less ">
+			<h3>Ostala vroča ponudba</h3>
+				<div class="floatingblock">
+					<div class="flex-col-sp-between">
+						<a href="artikel.html"><img src="slike/aal3.jpg" alt="themadnessofmany" style="width:90%;height:90%;"></a>
+						<a href="izvajalec2.html" class="link izvajalec featured less">Animals as Leaders</a>
+						<a href="artikel.html" class="link album featured less">Weightless</a>
+						<label>11 €</label>
+						<input type="submit" value="Dodaj v košarico" class="gumb oranzen featured less">
+					</div>
+				</div>
+				<div class="floatingblock">
+					<div class="flex-col-sp-between">
+						<a href="artikel.html"><img src="slike/aal4.jpg" alt="themadnessofmany" style="width:90%;height:90%;"></a>
+						<a href="izvajalec2.html" class="link izvajalec featured less">Animals as Leaders</a>
+						<a href="artikel.html" class="link album featured less">The Joy of Motion</a>
+						<label>13.3 €</label>
+						<input type="submit" value="Dodaj v košarico" class="gumb oranzen featured less">
+					</div>
+				</div>
+				<div class="floatingblock">
+					<div class="flex-col-sp-between">
+						<a href="artikel.html"><img src="slike/aal2.jpg" alt="themadnessofmany" style="width:90%;height:90%;"></a>
+						<a href="izvajalec2.html" class="link izvajalec featured less">Animals as Leaders</a>
+						<a href="artikel.html" class="link album featured less">Animals of Leaders</a>
+						<label>9.5 €</label>
+						<input type="submit" value="Dodaj v košarico" class="gumb oranzen featured less">
+					</div>
+				</div>
+				<div class="floatingblock">
+					<div class="flex-col-sp-between">
+						<a href="artikel.html"><img src="slike/orchid-the-mouths-of-madness.jpg" alt="themadnessofmany" style="width:90%;height:90%;"></a>
+						<a href="izvajalec2.html" class="link izvajalec featured less">Orchid</a>
+						<a href="artikel.html" class="link album featured less">The Mouths of Madness</a>
+						<label>15 €</label>
+						<input type="submit" value="Dodaj v košarico" class="gumb oranzen featured less">
+					</div>
+				</div>
+		</div>
+	</div>
+	@include('layouts.partials.foot')
+@stop
