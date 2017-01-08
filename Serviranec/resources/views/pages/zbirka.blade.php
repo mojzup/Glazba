@@ -50,54 +50,20 @@
 			<div><input type="submit" value="Filtriraj" class="gumb modr filtr"></div>
 		</div>
 		<div class="seznam flex-col">
+			@foreach($products as $product)
 			<div class="artikel-posamezen flex-row">
 				<a href="artikel.html">
-	  			<img src="slike/orchid-the-mouths-of-madness.jpg" alt="Mouth of Madness" style="width:150px;height:150px;">
-				</a>
-				<div class="artikel-podrobnosti flex-col">
-					<a href="izvajalec2.html" class="link izvajalec artikel">Orchid</a>
-					<div><a href="artikel.html" class="link album artikel">The Mouths of Madness</a><label class="artikel-leto"> (2013)</label></div>	
-					<div class="artikel-cena">15€</div>
-					<form>
-					<input type="submit" value="Dodaj v košarico" class="gumb oranzen sez"></form>
-				</div>
-			</div>
-			<div class="artikel-posamezen flex-row">
-				<a href="artikel.html">
-	  			<img src="slike/orchid-the-mouths-of-madness.jpg" alt="Mouth of Madness" style="width:150px;height:150px;">
+	  			<img src="{{ $product->imagePath}}" alt="{{$product->ime}}" style="width:150px;height:150px;">
 				</a>
 				<div class="artikel-podrobnosti flex-col-sp-around">
 					<a href="izvajalec2.html" class="link izvajalec artikel">Orchid</a>
-					<div><a href="artikel.html" class="link album artikel">The Mouths of Madness</a><label class="artikel-leto"> (2013)</label></div>	
-					<div class="artikel-cena">15€</div>
+					<div><a href="artikel.html" class="link album artikel">{{$product->ime}}</a><label class="artikel-leto"> ({{$product->leto}})</label></div>	
+					<div class="artikel-cena">{{$product->cena}}€</div>
 					<form>
-					<input type="submit" value="Dodaj v košarico" class="gumb oranzen sez"></form>
+					<a href="{{ route('zbirka.dodajvkosaro', ['id' => $product->id])}}" class="gumb oranzen sez">Dodaj v košarico</a></form>
 				</div>
 			</div>
-			<div class="artikel-posamezen flex-row">
-				<a href="artikel.html">
-	  			<img src="slike/orchid-the-mouths-of-madness.jpg" alt="Mouth of Madness" style="width:150px;height:150px;">
-				</a>
-				<div class="artikel-podrobnosti flex-col-sp-around">
-					<a href="izvajalec2.html" class="link izvajalec artikel">Orchid</a>
-					<div><a href="artikel.html" class="link album artikel">The Mouths of Madness</a><label class="artikel-leto"> (2013)</label></div>	
-					<div class="artikel-cena">15€</div>
-					<form>
-					<input type="submit" value="Dodaj v košarico" class="gumb oranzen sez"></form>
-				</div>
-			</div>
-			<div class="artikel-posamezen ">
-				<a href="artikel.html">
-	  			<img src="slike/orchid-the-mouths-of-madness.jpg" alt="Mouth of Madness" style="width:150px;height:150px;">
-				</a>
-				<div class="artikel-podrobnosti flex-col-sp-around">
-					<a href="izvajalec2.html" class="link izvajalec artikel">Orchid</a>
-					<div><a href="artikel.html" class="link album artikel">The Mouths of Madness</a><label class="artikel-leto"> (2013)</label></div>	
-					<div class="artikel-cena">15€</div>
-					<form>
-					<input type="submit" value="Dodaj v košarico" class="gumb oranzen sez"></form>
-				</div>
-			</div>
+			@endforeach
 		</div>
 		<div class="block"></div>
 	</div>

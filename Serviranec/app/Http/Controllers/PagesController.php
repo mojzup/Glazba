@@ -10,10 +10,10 @@ class PagesController extends Controller
 
     	return view('pages.home');
     }
-     public function zbirka(){
+   /* public function zbirka(){
 
     	return view('pages.zbirka');
-    }
+    }*/
      public function izvajalci(){
 
     	return view('pages.izvajalci');

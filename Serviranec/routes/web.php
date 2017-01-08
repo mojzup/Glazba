@@ -20,12 +20,30 @@ Route::get('/', [
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/zbirka', 'PagesController@zbirka');
 Route::get('/izvajalci', 'PagesController@izvajalci');
 Route::get('/zvrsti', 'PagesController@zanri');
-Route::get('/kosarica', 'PagesController@kosarica');
+Route::get('/kosarica', [
+	'uses' => 'PagesController@kosarica',
+	'as' => 'kosarica',
+	'middleware' => 'auth'
+	]);
 Route::get('/blagajna', 'PagesController@blagajna');
 Route::get('/zelje', 'PagesController@zelje');
 Route::get('/zgodovina', 'PagesController@zgodovina');
 Route::get('/nastavitve', 'PagesController@nastavitve');
-
+/*Route::get('/artikel', [
+	'uses' => 'ProductController@getIndex',
+	'as' => 'artikel'
+	]);*/
+Route::get('/zbirka', [
+	'uses' => 'ProductController@getIndex',
+	'as' => 'zbirka.index'
+	]);
+Route::get('/dodaj-v-kosarico{id}', [
+	'uses' => 'ProductController@getAddToCart',
+	'as' => 'zbirka.dodajvkosaro'
+	]);
+Route::get('/kosarica', [
+	'uses' => 'ProductController@getCart',
+	'as' => 'kosarica'
+	]);

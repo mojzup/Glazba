@@ -14,9 +14,9 @@
                              <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pozdravljena, {{ Auth::user()->name }} <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Seznam želja</a></li>
-                                <li><a href="#">Zgodovina</a></li>
-                                <li><a href="#">Nastavitve</a></li>
+                                <li><a href="{{ url('/zelje') }}">Seznam želja</a></li>
+                                <li><a href="{{ url('/zgodovina') }}">Zgodovina</a></li>
+                                <li><a href="{{ url('/nastavitve') }}">Nastavitve</a></li>
                                     <li><a href="{{ url('/logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">Odjava</a>
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -37,7 +37,7 @@
 		</div>
 		<div class = "block index-kosarica flex-row">
 			<a href="{{ url('/kosarica') }}" class="cart"><img src="slike/cart.png" alt="cart" style="width:30px;height:30px;"></a>
-			<a href="{{ url('/kosarica') }}" class="cart-text">Košarica</a>
+			<a href="{{ url('/kosarica') }}" class="cart-text">Košarica {{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</a>
 		</div>	
 	</div>
 </div>
