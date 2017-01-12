@@ -22,11 +22,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/izvajalci', 'PagesController@izvajalci');
 Route::get('/zvrsti', 'PagesController@zanri');
-Route::get('/kosarica', [
-	'uses' => 'PagesController@kosarica',
-	'as' => 'kosarica',
-	'middleware' => 'auth'
-	]);
 Route::get('/blagajna', 'PagesController@blagajna');
 Route::get('/zelje', 'PagesController@zelje');
 Route::get('/zgodovina', 'PagesController@zgodovina');
@@ -41,7 +36,8 @@ Route::get('/zbirka', [
 ]);
 Route::get('/kosarica', [
     'uses' => 'ProductController@getCart',
-    'as' => 'pages.kosarica'
+    'as' => 'pages.kosarica',
+    
 ]);
 Route::get('/dodaj-v-kosarico/{id}', [
     'uses' => 'ProductController@getAddToCart',
@@ -49,10 +45,12 @@ Route::get('/dodaj-v-kosarico/{id}', [
 ]);
 Route::get('/blagajna', [
     'uses' => 'ProductController@getCheckout',
-    'as' => 'checkout'
+    'as' => 'checkout',
+    'middleware' => 'auth'
 ]);
 Route::post('/blagajna', [
     'uses' => 'ProductController@postCheckout',
-    'as' => 'checkout'
+    'as' => 'checkout',
+    'middleware' => 'auth'
 ]);
 

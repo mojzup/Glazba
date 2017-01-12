@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class PagesController extends Controller
 {
@@ -22,10 +23,6 @@ class PagesController extends Controller
 
     	return view('pages.zanri');
     }
-    public function kosarica(){
-
-    	return view('pages.kosarica');
-    }
      public function blagajna(){
 
     	return view('pages.blagajna');
@@ -35,8 +32,12 @@ class PagesController extends Controller
     	return view('pages.zelje');
     }
         public function zgodovina(){
-
-    	return view('pages.zgodovina');
+            $orders = Auth::user()->orders;
+            $orders->transform(function($order, $key){
+                $order->cart = unserialize($order->cart);
+                return $order;
+            });
+    	return view('pages.zgodovina', ['orders' => $orders]);
     }
         public function nastavitve(){
 

@@ -2,6 +2,7 @@
 @section('page-content')
 	@include('layouts.partials.nav')
 	<div class="body">
+	<div id="charge-message">{{ Session::get('success')}}</div>
 		<div class="index-featured">
 			<h3>Vroča ponudba</h3>
 				<div class="featured">

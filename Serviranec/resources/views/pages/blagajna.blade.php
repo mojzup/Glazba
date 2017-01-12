@@ -19,9 +19,9 @@
 					<label class="blagajna-naslov">Naslov za dostavo</label>
 					<div class="blagajnaPovzetek">
 						<label>Ime Priimek</label>
-						<input type="text" placeholder="Vnesi ime in priimek" name="uname" class="polje" required>
+						<input type="text" placeholder="Vnesi ime in priimek" name="name" class="polje" required>
 						<label>Ulica in hišna številka</label>
-						<input type="text" placeholder="Vnesi ulico in hišno številko" name="uname" class="polje" required>
+						<input type="text" placeholder="Vnesi ulico in hišno številko" name="address" class="polje" required>
 						<label>Pošta in poštna številka</label>
 						<input type="text" placeholder="Vnesi pošto in poštno številko" name="uname" class="polje" required>
 						<label>Država</label>
@@ -46,7 +46,7 @@
 						<label class="kosaricaSkupajLab cena blag">{{$total}}€</label>
 					</div>
 					{{ csrf_field() }}
-					<a href="blagajna.html" class="gumb modr blag druga">Potrdi in plačaj</a>
+					<button type="submit" class="gumb modr blag druga">Potrdi in plačaj</button>
 				</div>
 			</form>
 		</div>
