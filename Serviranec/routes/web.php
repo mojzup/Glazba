@@ -36,14 +36,23 @@ Route::get('/nastavitve', 'PagesController@nastavitve');
 	'as' => 'artikel'
 	]);*/
 Route::get('/zbirka', [
-	'uses' => 'ProductController@getIndex',
-	'as' => 'zbirka.index'
-	]);
-Route::get('/dodaj-v-kosarico{id}', [
-	'uses' => 'ProductController@getAddToCart',
-	'as' => 'zbirka.dodajvkosaro'
-	]);
+    'uses' => 'ProductController@getIndex',
+    'as' => 'zbirka.index'
+]);
 Route::get('/kosarica', [
-	'uses' => 'ProductController@getCart',
-	'as' => 'kosarica'
-	]);
+    'uses' => 'ProductController@getCart',
+    'as' => 'pages.kosarica'
+]);
+Route::get('/dodaj-v-kosarico/{id}', [
+    'uses' => 'ProductController@getAddToCart',
+    'as' => 'dodajvkosaro'
+]);
+Route::get('/blagajna', [
+    'uses' => 'ProductController@getCheckout',
+    'as' => 'checkout'
+]);
+Route::post('/blagajna', [
+    'uses' => 'ProductController@postCheckout',
+    'as' => 'checkout'
+]);
+

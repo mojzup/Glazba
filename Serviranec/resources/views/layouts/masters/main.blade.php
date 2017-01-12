@@ -11,5 +11,6 @@
 	</head>
 	<body >
 		@yield('page-content')
+		@yield('scripts')
 	</body>	
 </html>

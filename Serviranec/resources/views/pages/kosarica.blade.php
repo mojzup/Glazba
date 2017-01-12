@@ -6,6 +6,7 @@
 			<h2>Košarica</h2>
 			@if(Session::has('cart'))
 			<div class=" kosaravse ">
+				<div id="charge-message">{{ Session::get('success')}}</div>
 				<div class="seznam kosarica flex-col">
 				@foreach($products as $product)
 					<div class="kosaricaArtikel flex-col">
@@ -24,7 +25,7 @@
 							</form>
 							</div>
 							<div class="kosaricaCena flex-col">
-							<label>Cena</label> <label class="kosaricaCena2">{{$product['price']}}€</label>
+							<label>Cena</label> <label class="kosaricaCena2">{{$product['item']['cena']}}€</label>
 							</div>
 						</div>
 						<div class="kosaricaOdstrani flex-end">
@@ -35,12 +36,12 @@
 				</div>
 			<div class="kosaricaSkupaj flex-col">
 					<label class="kosaricaSkupajLab">Povzetek nakupa</label>
-					<label class="kosaricaSkupajSt">(4 artikli)</label>
+					<label class="kosaricaSkupajSt">({{ $totalQty }}) artiklov</label>
 					<div class="kosaricaSkupajLab2 kos">
 						<label class="kosaricaSkupajLab blag">Skupaj</label> 
-						<label class="kosaricaSkupajLab cena blag">{{$totalPrice}}€</label>
+						<label class="kosaricaSkupajLab cena blag">{{ $totalPrice }}€</label>
 					</div>
-						<a href="{{ url('/blagajna') }}" class="gumb modr blag">Na blagajno</a>
+						<a href="{{ route('checkout') }}" class="gumb modr blag">Na blagajno</a>
 					</div>	
 			</div>
 			@else

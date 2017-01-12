@@ -60,7 +60,7 @@
 					<div><a href="artikel.html" class="link album artikel">{{$product->ime}}</a><label class="artikel-leto"> ({{$product->leto}})</label></div>	
 					<div class="artikel-cena">{{$product->cena}}€</div>
 					<form>
-					<a href="{{ route('zbirka.dodajvkosaro', ['id' => $product->id])}}" class="gumb oranzen sez">Dodaj v košarico</a></form>
+					<a href="{{ route('dodajvkosaro', ['id' => $product->id])}}" class="gumb oranzen sez">Dodaj v košarico</a></form>
 				</div>
 			</div>
 			@endforeach

@@ -37,7 +37,7 @@
 		</div>
 		<div class = "block index-kosarica flex-row">
 			<a href="{{ url('/kosarica') }}" class="cart"><img src="slike/cart.png" alt="cart" style="width:30px;height:30px;"></a>
-			<a href="{{ url('/kosarica') }}" class="cart-text">Košarica {{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</a>
+			<a href="{{ url('/kosarica') }}" class="cart-text">Košarica ({{Session::has('cart') ? Session::get('cart')->totalQty : '0'}})</a>
 		</div>	
 	</div>
 </div>

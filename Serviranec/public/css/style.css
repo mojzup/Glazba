@@ -330,6 +330,11 @@ ul.pesmi{	list-style-type: none;}
 	float: left;
 	margin-left:  10%;
 }
+.blagajna{
+    margin-left: 5%;
+    margin-left: 5%;
+
+}
 .blagajna-naslov{
 	margin-top: 20px;
 	margin-bottom: 5px;
@@ -363,7 +368,6 @@ ul.pesmi{	list-style-type: none;}
 	justify-content: flex-start;
 }
 .blagajna2{
-	margin-left: -20%;
 	width: 70%;
 	margin-right: 30px;
 	display: flex;
