@@ -15,17 +15,19 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-           // $table->string('imagePath');
+            $table->string('imagePath')->default('default.jpg');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-           /* $table->string('ulica');
-            $table->string('posta');
-            $table->string('drzava');
-            $table->string('KREDnosilec');
-            $table->integer('KREDstevilka');
-            $table->string('KREDveljavnost');
-            $table->integer('KREDvarnost');*/
+            $table->string('imepriimek')->default('');
+            $table->string('ulica')->default('');
+            $table->string('posta')->default('');
+            $table->string('drzava')->default('');
+            $table->string('KREDnosilec')->default('');
+            $table->bigInteger('KREDstevilka')->default(0);
+            $table->string('KREDmesec')->default(0);
+            $table->string('KREDleto')->default(0);
+            $table->integer('KREDvarnost')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

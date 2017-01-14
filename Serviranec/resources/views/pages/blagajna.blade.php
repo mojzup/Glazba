@@ -19,25 +19,25 @@
 					<label class="blagajna-naslov">Naslov za dostavo</label>
 					<div class="blagajnaPovzetek">
 						<label>Ime Priimek</label>
-						<input type="text" placeholder="Vnesi ime in priimek" name="name" class="polje" required>
+						<input type="text" value="{{ $user->imepriimek}}" name="name" class="polje" required>
 						<label>Ulica in hišna številka</label>
-						<input type="text" placeholder="Vnesi ulico in hišno številko" name="address" class="polje" required>
+						<input type="text"  value="{{ $user->ulica}}" name="address" class="polje" required>
 						<label>Pošta in poštna številka</label>
-						<input type="text" placeholder="Vnesi pošto in poštno številko" name="uname" class="polje" required>
+						<input type="text" value="{{ $user->posta}}" name="uname" class="polje" required>
 						<label>Država</label>
-						<input type="text" placeholder="Vnesi državo" name="uname" class="polje" required>
+						<input type="text" value="{{ $user->drzava}}" name="uname" class="polje" required>
 					</div>
 					<label class="blagajna-naslov">Podatki o plačilni kartici</label>
 					<div class="blagajnaPovzetek">
 						<label>Ime nosilca</label>
-						<input type="text" placeholder="Vnesi ime nosilca kartice" id="card-name" name="uname" class="polje" required>
+						<input type="text" value="{{ $user->KREDnosilec}}"  id="card-name" name="uname" class="polje" required>
 						<label>Številka kartice</label>
-						<input type="text" placeholder="Vnesi številko kartice" name="uname" id="card-number" class="polje" required>
+						<input type="text" value="{{ $user->KREDstevilka}}" name="uname" id="card-number" class="polje" required>
 						<label>Veljavno do</label>
-						<div class="flex-row"><input type="text" placeholder="Vnesi pač to" name="uname" id="card-expiry-month" class="polje" required>/
-						<input type="text" placeholder="Vnesi pač to" name="uname" id="card-expiry-year" class="polje" required></div>
+						<div class="flex-row"><input type="text" value="{{ $user->KREDmesec}}" name="uname" id="card-expiry-month" class="polje" required>/
+						<input type="text" value="{{ $user->KREDleto}}" name="uname" id="card-expiry-year" class="polje" required></div>
 						<label>Varnostna koda</label>
-						<input type="text" placeholder="Vnesi varnostno kodo" id="card-cvc" name="uname" class="polje" required>	
+						<input type="text" value="{{ $user->KREDvarnost}}" id="card-cvc" name="uname" class="polje" required>	
 					</div>
 				</div>
 				<div class="flex-col kosaricaSkupaj blagajna">

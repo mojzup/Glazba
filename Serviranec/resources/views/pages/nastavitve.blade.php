@@ -5,40 +5,42 @@
 		<div class="body">	
 			<h2>Nastavitve</h2>
 			<div class="seznam nastavitve flex-col">
+			
 				<h3>Spremeni prikazno sliko</h3>
-				<div class="camera">
-					<div class="flex-row">
-						<video id="video" width="213" height="160" autoplay></video>
-						<canvas id="canvas" width="213" height="160"></canvas>
-					</div>
-					<input type="submit" id="snap" class="gumb modr nastavitve" value="Zajemi sliko">
+				<div class="flex-row">
+		  			<img src="/slike/avatarji/{{ $user->imagePath}}" style="width:150px; height:150px;">
+		  			<form enctype="multipart/form-data" action="{{ URL::to("nastavitve/$user->name") }}" method="POST">
+		  			<input type="file" name="prikazna">	
 	  			</div>
 				<h3>Spremeni geslo</h3>
 				<label>Staro geslo</label>
-				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nast" required>
+				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nast" >
 				<label>Novo geslo</label>
-				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nastavitve" required>
+				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nastavitve" >
 				<label>Potrdi geslo</label>
-				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nastavitve" required>
+				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nastavitve" >
 				<h3>Spremeni naslov</h3>
 				<label>Ime Priimek</label>
-				<input type="text" placeholder="Vnesi ime in priimek" name="uname" class="polje nastavitve" required>
+				<input type="text" value="{{ $user->imepriimek}}" name="imepriimek" class="polje nastavitve" >
 				<label>Ulica in hišna številka</label>
-				<input type="text" placeholder="Vnesi ulico in hišno številko" name="uname" class="polje nastavitve" required>
+				<input type="text" value="{{ $user->ulica}}" name="ulica" class="polje nastavitve" >
 				<label>Pošta in poštna številka</label>
-				<input type="text" placeholder="Vnesi pošto in poštno številko" name="uname" class="polje nastavitve" required>
+				<input type="text" value="{{ $user->posta}}" name="posta" class="polje nastavitve" >
 				<label>Država</label>
-				<input type="text" placeholder="Vnesi državo" name="uname" class="polje nastavitve" required>
+				<input type="text" value="{{ $user->drzava}}" name="drzava" class="polje nastavitve" >
 				<h3>Spremeni podatke o plačilni kartici</h3>
 				<label>Ime nosilca</label>
-				<input type="text" placeholder="Vnesi ime nosilca kartice" name="uname" class="polje nastavitve" required>
+				<input type="text" value="{{ $user->KREDnosilec}}" name="KREDnosilec" class="polje nastavitve" >
 				<label>Številka kartice</label>
-				<input type="text" placeholder="Vnesi številko kartice" name="uname" class="polje nastavitve" required>
+				<input type="text" value="{{ $user->KREDstevilka}}" name="KREDstevilka" class="polje nastavitve" >
 				<label>Veljavno do</label>
-				<input type="text" placeholder="Vnesi pač to" name="uname" class="polje nastavitve" required>
+				<div class="flex-row"><input type="text" value="{{ $user->KREDmesec}}" name="KREDmesec" class="polje nastavitve" >/
+				<input type="text" value="{{ $user->KREDleto}}" name="KREDleto" class="polje nastavitve" ></div>
 				<label>Varnostna koda</label>
-				<input type="text" placeholder="Vnesi varnostno kodo" name="uname" class="polje nastavitve" required>
-				<input type="submit" class="gumb modr nastavitve" value="Shrani">	
+				<input type="text" value="{{ $user->KREDvarnost}}" name="KREDvarnost" class="polje nastavitve" >
+				<input type="hidden" name="_token" value="{{csrf_token()}}">
+		  		<input type="submit" class="gumb modr nastavitve" value="Shrani">
+				</form>
 			</div>
 		</div>
 		@include('layouts.partials.foot')

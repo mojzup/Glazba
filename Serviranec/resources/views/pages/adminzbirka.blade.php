@@ -1,11 +1,8 @@
 @extends('layouts.masters.main')
 @section('page-content')
-	@include('layouts.partials.nav')
+	@include('layouts.partials.navadmin')
 	<div class="body">
-	<div class="potka">
-		<a href="{{route('home')}}">glazba</a><label>  /  </label><label class="klikpotka">Zbirka</label> 
-	</div>
-	<h2>Zbirka</h2>
+	<h2>Artikli</h2>
 	<div class="flex-end">
 		<div class="block"></div>
 		<div class="razvrsti select">
@@ -52,15 +49,13 @@
 		<div class="seznam flex-col">
 			@foreach($products as $product)
 			<div class="artikel-posamezen flex-row">
-				<a href="{{ route('product.index', ['id' => $product->id])}}">
-	  			<img src="{{ $product->imagePath}}" alt="{{$product->ime}}" style="width:150px;height:150px;">
+				<a href="{{ route('artikeluredi', ['id' => $product->id])}}">
+	  			<img src="/{{ $product->imagePath}}" alt="{{$product->ime}}" style="width:150px;height:150px;">
 				</a>
 				<div class="artikel-podrobnosti flex-col-sp-around">
 					<a href="izvajalec2.html" class="link izvajalec artikel">Orchid</a>
-					<div><a href="{{ route('product.index', ['id' => $product->id])}}" class="link album artikel">{{$product->ime}}</a><label class="artikel-leto"> ({{$product->leto}})</label></div>	
+					<div><a href="{{ route('artikeluredi', ['id' => $product->id])}}" class="link album artikel">{{$product->ime}}</a><label class="artikel-leto"> ({{$product->leto}})</label></div>	
 					<div class="artikel-cena">{{$product->cena}}€</div>
-					<form>
-					<a href="{{ route('dodajvkosaro', ['id' => $product->id])}}" class="gumb oranzen sez">Dodaj v košarico</a></form>
 				</div>
 			</div>
 			@endforeach

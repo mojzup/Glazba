@@ -6,7 +6,7 @@
 			<h2>Košarica</h2>
 			@if(Session::has('cart'))
 			<div class=" kosaravse ">
-				<div id="charge-message">{{ Session::get('success')}}</div>
+
 				<div class="seznam kosarica flex-col">
 				@foreach($products as $product)
 					<div class="kosaricaArtikel flex-col">
@@ -29,7 +29,7 @@
 							</div>
 						</div>
 						<div class="kosaricaOdstrani flex-end">
-							<input type="submit" value="Odstrani" class="gumb siv">
+							<a href="{{ route('odstraniizkosare', ['id' =>$product['item']['id']])}}" class="gumb siv">Odstrani</a>
 						</div>
 					</div>	
 					@endforeach			

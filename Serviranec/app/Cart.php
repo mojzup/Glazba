@@ -30,4 +30,16 @@ class Cart
         $this->totalQty++;
         $this->totalPrice += $item->cena;
     }
+
+    public function remove($id){
+        $this->totalQty-=$this->items[$id]['qty'];
+        $this->totalPrice -= $this->items[$id]['price'];
+        unset($this->items[$id]);
+    }
+ /*   public function changeQty(%id){
+        $this->items[$id]['qty']--;
+        $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
+        $this->totalQty--;
+        $this->totalPrice -= $this->items[$id]['items']['price'];
+    }*/
 }

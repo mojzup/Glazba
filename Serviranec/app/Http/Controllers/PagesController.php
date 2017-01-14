@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Order;
 
 class PagesController extends Controller
 {
@@ -11,10 +12,10 @@ class PagesController extends Controller
 
     	return view('pages.home');
     }
-   /* public function zbirka(){
+    public function admin(){
 
-    	return view('pages.zbirka');
-    }*/
+    	return view('pages.admin');
+    }
      public function izvajalci(){
 
     	return view('pages.izvajalci');
@@ -31,17 +32,16 @@ class PagesController extends Controller
 
     	return view('pages.zelje');
     }
-        public function zgodovina(){
+    public function zgodovina(){
             $orders = Auth::user()->orders;
             $orders->transform(function($order, $key){
                 $order->cart = unserialize($order->cart);
                 return $order;
             });
-    	return view('pages.zgodovina', ['orders' => $orders]);
+    return view('pages.zgodovina', ['orders' => $orders]);
     }
-        public function nastavitve(){
-
-    	return view('pages.nastavitve');
-    }
-
+   public function narocila(){
+        $orders = Order::all();
+        return view('pages.narocila', ['orders' => $orders]));
+   }
 }

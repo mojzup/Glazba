@@ -4,33 +4,27 @@
 	@include('layouts.partials.nav2')
 		<div class="body">
 			<div class="potka">
-				<a href="index.html">glazba</a><label> / </label><a href="seznam.html">Zbirka</a><label> / </label><label class="klikpotka">Orchid - The Mouths of Madness</label>
+				<a href="{{ url('/') }}">glazba</a><label> / </label><a href="{{ url('/zbirka') }}">Zbirka</a><label> / </label><label class="klikpotka">Orchid -{{$product->ime}}</label>
 			</div>
 			<div class="artikel flex-col">
 				<div class="zgori flex-row">
-					<img src="slike/orchid-the-mouths-of-madness.jpg" alt="Mouths Of Madness" style="width:300px;height: 300px;">
+					<img src="/{{$product->imagePath}}" alt="{{$product->ime}}" style="width:300px;height: 300px;">
 					<div class="artikelPodatki album flex-col-sp-between">
-						<div><label class="artikelIme">The Mouths of Madness</label><label>(2013)</label></div>
+						<div><label class="artikelIme">{{$product->ime}}</label><label>({{$product->leto}})</label></div>
 						<a href="izvajalec2.html" class="link izvajalec album">Orchid</a>
 						<form>
 		  					<label class="artikelOznaka druga">Količina:</label>
 		  					<input type="text" name="quantity"  pattern="[0-9]{1,2}" class="polje artikel">
-		  					<label class="artikelZaloga">na zalogi</label>
 						</form>
 						<div class="artikelPodatki2">
-							<div><label class="artikelOznaka">Cena:</label><label class="artikelCena">15 €</label></div>
-							<input type="submit" class="gumb modr artikel" Value="Dodaj v košarico">
-							<input type="submit" class="gumb svmodr artikel" Value="Dodaj na seznam želja">
+							<div><label class="artikelOznaka">Cena:</label><label class="artikelCena">{{$product->cena}}€</label></div>
+							<div class="flex-col"><a href="{{ route('dodajvkosaro', ['id' => $product->id])}}" class="gumb modr artikel">Dodaj v košarico</a>
+							<a href="{{ route('dodajvzelje', ['id' => $product->id])}}" class="gumb svmodr artikel">Dodaj na seznam želja</a></div>
 						</div>
 					</div>
 				</div>
 				<div class="artikelVsebina">
-					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
-					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
-					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
-					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
-					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
-					The Mouths of Madness je drugi studijski album Ameriške heavy metal skupine Orchid.
+					{{$product->opis}}
 				</div>
 				<label class="pesmioznaka">Seznam pesmi</label>
 				<div class=" pesmivse flex-sp-between">

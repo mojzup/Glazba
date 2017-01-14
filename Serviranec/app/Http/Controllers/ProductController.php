@@ -6,7 +6,7 @@ use App\Cart;
 use App\Product;
 use App\Order;
 use Illuminate\Http\Request;
-
+use Image;
 use App\Http\Requests;
 use Session;
 use Auth;
@@ -15,12 +15,41 @@ use Stripe\Charge;
 
 class ProductController extends Controller
 {
+
+    public function nov(Request $request){
+       /* if ($request->hasFile('file')){
+            $prikazna = $request->file('file');
+            $filename = time() .  '.' . $prikazna->getClientOriginalExtension();
+            Image::make($prikazna)->resize(150,150)->save(public_path('/slike/'.$filename) );
+           $userser->imagePath = $filename;    
+        }*/
+        $product = new Product;
+        $product->ime = $request->ime;
+        $product->cena = $request->cena;
+        $product->format = $request->format;
+        $product->opis = $request->opis;
+        $product->save();
+        return view('pages.admin');
+    }
+
     public function getIndex()
     {
         $products = Product::all();
         return view('pages.zbirka', ['products' => $products]);
     }
-
+       public function getZbirkaadmin(){
+        $products = Product::all();
+         return view('pages.adminzbirka', ['products' => $products]);
+   }
+    public function getProduct($id)
+    {
+        $product = Product::find($id);
+        return view('pages.artikel', ['product' => $product]);
+    }
+    public function getAddToWishlist($id){
+        $product = Product::find($id);
+        return view('pages.artikel');
+    }
     public function getAddToCart(Request $request, $id) {
         $product = Product::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
@@ -31,6 +60,19 @@ class ProductController extends Controller
         return redirect()->route('zbirka.index');
     }
 
+    public function getRemoveItem($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->remove($id);
+
+        if (count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
+
+        return redirect()->route('pages.kosarica');
+    }
     public function getCart() {
         if (!Session::has('cart')) {
             return view('pages.kosarica');
@@ -44,10 +86,11 @@ class ProductController extends Controller
         if (!Session::has('cart')) {
             return view('pages.kosarica');
         }
+        $user = Auth::user();
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $total = $cart->totalPrice;
-        return view('pages.blagajna', ['products' => $cart->items, 'total' => $total]);
+        return view('pages.blagajna', ['products' => $cart->items, 'total' => $total, 'user' => $user]);
     }
 
     public function postCheckout(Request $request)
@@ -77,8 +120,36 @@ class ProductController extends Controller
         } catch (\Exception $e) {
             return redirect()->route('checkout')->with('error', $e->getMessage());
         }
-
         Session::forget('cart');
         return redirect()->route('home')->with('success', 'Čestitamo za nakup!');
+    }
+
+    public function getArtikeluredi($id){
+        $product = Product::find($id);
+        return view('pages.artikeluredi', ['product' => $product]);
+    }
+       public function postArtikeluredi(Request $request, $id){
+        if ($request->hasFile('file')){
+            $prikazna = $request->file('file');
+            $filename = time() .  '.' . $prikazna->getClientOriginalExtension();
+            Image::make($prikazna)->resize(150,150)->save(public_path('/slike/'.$filename) );
+
+            
+            $product->imagePath = $filename;
+            
+        }
+        $product = Product::find($id);
+        $product->artist_id = $request['izvajalec'];
+        $product->zanr_id = $request['zvrst'];
+        $product->ime = $request['ime'];
+        $product->leto = $request['leto'];
+        $product->cena = $request['cena'];
+        $product->format = $request['format'];
+        $product->opis = $request['opis'];
+        $product->update();
+        return view('pages.artikeluredi', ['product' => $product]);
+    }
+     public function getArtikelnov(){
+        return view('pages.artikelnov');
     }
 }

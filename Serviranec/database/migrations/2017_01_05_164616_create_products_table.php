@@ -16,12 +16,14 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('imagePath');
+            $table->integer('artist_id')->default(0);
+            $table->integer('zanr_id')->default(0);
+            $table->string('imagePath')->default('slike/default.jpg');
             $table->string('ime');
-            $table->integer('leto');
+            $table->integer('leto')->default(0);
             $table->integer('cena');
             $table->integer('format');
-            $table->integer('dobavljivost'); 
+            $table->integer('dobavljivost')->default(0);
             $table->text('opis');
         });
     }
