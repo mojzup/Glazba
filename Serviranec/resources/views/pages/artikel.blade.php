@@ -3,15 +3,20 @@
 	@include('layouts.partials.nav')
 	@include('layouts.partials.nav2')
 		<div class="body">
+		@foreach ($artists as $artist)
+				@if ($product->artist_id === $artist->id)
+				<?php $var = $artist; ?>
+				@endif
+			@endforeach
 			<div class="potka">
-				<a href="{{ url('/') }}">glazba</a><label> / </label><a href="{{ url('/zbirka') }}">Zbirka</a><label> / </label><label class="klikpotka">Orchid -{{$product->ime}}</label>
+				<a href="{{ url('/') }}">glazba</a><label> / </label><a href="{{ url('/zbirka') }}">Zbirka</a><label> / </label><label class="klikpotka">{{$var->ime}} - {{$product->ime}}</label>
 			</div>
 			<div class="artikel flex-col">
 				<div class="zgori flex-row">
 					<img src="/{{$product->imagePath}}" alt="{{$product->ime}}" style="width:300px;height: 300px;">
 					<div class="artikelPodatki album flex-col-sp-between">
 						<div><label class="artikelIme">{{$product->ime}}</label><label>({{$product->leto}})</label></div>
-						<a href="izvajalec2.html" class="link izvajalec album">Orchid</a>
+						<a href="{{ route('artist.index', ['id' => $var->id])}}" class="link izvajalec album">{{$var->ime}}</a>
 						<form>
 		  					<label class="artikelOznaka druga">Količina:</label>
 		  					<input type="text" name="quantity"  pattern="[0-9]{1,2}" class="polje artikel">

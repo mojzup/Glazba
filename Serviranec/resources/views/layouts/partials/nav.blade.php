@@ -33,7 +33,6 @@
 		<div class="block2">
 			<a href="{{ url('/zbirka') }}" >Zbirka</a>
 			<a href="{{ url('/izvajalci') }}" >Izvajalci</a>
-			<a href="{{ url('/zvrsti') }}" >Zvrsti</a>
 		</div>
 		<div class = "block index-kosarica flex-row">
 			<a href="{{ url('/kosarica') }}" class="cart"><img src="/slike/cart.png" alt="cart" style="width:30px;height:30px;"></a>

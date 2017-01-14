@@ -11,17 +11,16 @@
 				@foreach($products as $product)
 					<div class="kosaricaArtikel flex-col">
 						<div class="flex-sp-between">
-							<a href="">
+							<a href="{{ route('product.index', ['id' => $product['item']['id']])}}">
 		  						<img src="{{ $product['item']['imagePath']}}" alt="{{$product['item']['ime']}}" style="height:150px;width:150px;">
 							</a>
 							<div class="flex-col">
-								<a href="izvajalec2.html" class="link izvajalec">Orchid</a>
-								<a href="artikel.html" class="link album">{{$product['item']['ime']}}</a>
+								<a href="{{ route('product.index', ['id' => $product['item']['id']])}}" class="link album">{{$product['item']['ime']}}</a>
 							</div>
 							<div class="kosaricaKolicina flex-col">
 			  					<label>Količina</label>
 			  					<form>
-			  						<label><input type="text" name="quantity" pattern="[0-9]{1,2}" class="polje kolicina" placeholder="{{$product['qty']}}"></label>
+			  						<label>{{$product['qty']}}</label>
 							</form>
 							</div>
 							<div class="kosaricaCena flex-col">

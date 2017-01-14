@@ -10,16 +10,17 @@ use App\Product;
 class PagesController extends Controller
 {
     public function home(){
-
-    	return view('pages.home');
+        $artists = Artist::all();
+        $products = Product::all();
+    	return view('pages.home', ['products' => $products, 'artists' => $artists]);
     }
     public function admin(){
 
     	return view('pages.admin');
     }
      public function izvajalci(){
-
-    	return view('pages.izvajalci');
+        $artists = Artist::all();
+    	return view('pages.izvajalci', ['artists' => $artists]);
     }
      public function zanri(){
 

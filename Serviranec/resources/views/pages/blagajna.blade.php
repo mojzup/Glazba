@@ -1,6 +1,6 @@
 @extends('layouts.masters.main')
 @section('page-content')
-		<div class="blagajnaglava"><a href="index.html"><img src="slike/logo1.png" width="194.6px" height="81.3px" alt="Glazba" class ="logo blagajna"></a>	
+		<div class="blagajnaglava"><a href="{{route('home')}}"><img src="slike/logo1.png" width="194.6px" height="81.3px" alt="Glazba" class ="logo blagajna"></a>	
 			<h2>Blagajna</h2>
 		</div>
 		<div class="blagajna">
@@ -11,7 +11,7 @@
 					<div class="blagajnaPovzetek">
 					@foreach($products as $product)
 						<div class="blagajnaArtikel">
-							<a href="artikel.html">{{$product['item']['ime']}}</a>
+							<label>{{$product['item']['ime']}}</label>
 							<label>Cena: {{$product['item']['cena']}}€</label>
 						</div>
 					@endforeach

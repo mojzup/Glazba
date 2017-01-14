@@ -10,12 +10,12 @@
 					@foreach($order->cart->items as $item)
 					<div class="zeljeArtikel flex-sp-between">
 						<div class="zeljeArtikel2 flex-sp-between">
-							<a href="">
+							<a href="{{route ('product.index',[$item['item']['id']])}}">
 		  						<img src="{{$item['item']['imagePath']}}" alt="Mouth Of Madness" style="height:150px;width:150px;">
 							</a>
 							<div class="zeljeIme flex-col " >
-								<a href="izvajalec2.html" class="link izvajalec">Orchid</a>
-								<a href="artikel.html" class="link album">{{$item['item']['ime']}}</a>
+
+								<a href="{{route ('product.index',[$item['item']['id']])}}" class="link album">{{$item['item']['ime']}}</a>
 							</div>
 							<div class="zeljeCena">
 							<label>Cena</label> <label class="kosaricaCena2">{{$item['price']}}€</label><label> Količina</label><label class="kosaricaCena2">{{$item['qty']}}</label>

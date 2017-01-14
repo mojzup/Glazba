@@ -78,10 +78,6 @@ Route::post('/blagajna', [
     'as' => 'checkout',
     'middleware' => 'auth'
 ]);
-/*Route::get('/nastavitve/{username}', [
-	'uses' => 'UsersController@getAccount',
-	'as' => 'nastavitve'
-	]);*/
 Route::get('/nastavitve/{username}', 'UsersController@getAccount');
 
 Route::post('/nastavitve/{username}', [

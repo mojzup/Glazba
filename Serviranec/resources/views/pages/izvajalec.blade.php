@@ -8,7 +8,7 @@
 			<h2>{{$artist->ime}}</h2>
 			<div>
 				<div class="zgori">
-					<img src="/{{$artist->imagePath}}" alt="{{$artist->ime}}" style="width:450px;height:auto;">
+					<img src="/{{$artist->imagePath}}" alt="{{$artist->ime}}" style="width:450px;height:450px;">
 					<div class="artikelPodatki flex-col">
 						<div class="artikelPodatki2 izvajalec flex-col-sp-between">
 							<label>{{$artist->izvor}}</label>

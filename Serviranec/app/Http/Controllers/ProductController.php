@@ -45,8 +45,9 @@ class ProductController extends Controller
    }
     public function getProduct($id)
     {
+         $artists = Artist::all();
         $product = Product::find($id);
-        return view('pages.artikel', ['product' => $product]);
+        return view('pages.artikel', ['product' => $product, 'artists' => $artists]);
     }
     public function getAddToWishlist($id){
         $product = Product::find($id);
@@ -87,7 +88,9 @@ class ProductController extends Controller
         }
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
-        return view('pages.kosarica', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice, 'totalQty' => $cart->totalQty]);
+        $artists = Artist::all();
+        return view('pages.kosarica', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice, 'totalQty' => $cart->totalQty,
+         'artists'=> $artists]);
     }
 
     public function getCheckout(){
