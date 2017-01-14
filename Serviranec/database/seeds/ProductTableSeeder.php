@@ -13,6 +13,7 @@ class ProductTableSeeder extends Seeder
     {
         $product = new \App\Product([
         	'imagePath' => 'slike/orchid-the-mouths-of-madness.jpg',
+            'artist_id' => 1,
         	'ime' => 'The Mouths of Madness',
         	'leto' => 2013,
         	'cena' => 15,
@@ -24,6 +25,7 @@ class ProductTableSeeder extends Seeder
 
           $product = new \App\Product([
         	'imagePath' => 'slike/aal2.jpg',
+            'artist_id' => 2,
         	'ime' => 'Animals as Leaders',
         	'leto' => 2009,
         	'cena' => 13,
@@ -35,6 +37,7 @@ class ProductTableSeeder extends Seeder
 
           $product = new \App\Product([
         	'imagePath' => 'slike/aal3.jpg',
+            'artist_id' => 2,
         	'ime' => 'Weightless',
         	'leto' => 2011,
         	'cena' => 16,
@@ -46,6 +49,7 @@ class ProductTableSeeder extends Seeder
 
           $product = new \App\Product([
         	'imagePath' => 'slike/aal4.jpg',
+            'artist_id' => 2,
         	'ime' => ' The Joy of Motion',
         	'leto' => 2014,
         	'cena' => 16,
@@ -57,6 +61,7 @@ class ProductTableSeeder extends Seeder
 
           $product = new \App\Product([
         	'imagePath' => 'slike/aal5.jpg',
+            'artist_id' => 2,
         	'ime' => ' The Madness of Many',
         	'leto' => 2016,
         	'cena' => 21,
@@ -68,6 +73,7 @@ class ProductTableSeeder extends Seeder
 
           $product = new \App\Product([
         	'imagePath' => 'slike/surfers.jpg',
+            'artist_id' => 3,
         	'ime' => 'Surfers Pajama Party',
         	'leto' => 1963,
         	'cena' => 12,
@@ -79,6 +85,7 @@ class ProductTableSeeder extends Seeder
 
           $product = new \App\Product([
         	'imagePath' => 'slike/prijazni.jpg',
+            'artist_id' => 4,
         	'ime' => 'Na lepem prijazni',
         	'leto' => 1981,
         	'cena' => 8,
@@ -91,6 +98,7 @@ class ProductTableSeeder extends Seeder
         $product->save();
         $product = new \App\Product([
         	'imagePath' => 'slike/natdancer.jpg',
+            'artist_id' => 5,
         	'ime' => 'Native Dancer',
         	'leto' => 1974,
         	'cena' => 11,
@@ -101,6 +109,7 @@ class ProductTableSeeder extends Seeder
         $product->save();
         $product = new \App\Product([
         	'imagePath' => 'slike/spanheart.jpg',
+            'artist_id' => 6,
         	'ime' => 'My Spanish Heart',
         	'leto' => 1976,
         	'cena' => 10,
@@ -111,6 +120,7 @@ class ProductTableSeeder extends Seeder
         $product->save();
         $product = new \App\Product([
         	'imagePath' => 'slike/yerwellies.jpg',
+            'artist_id' => 7,
         	'ime' => 'Bring Yer Wellies',
         	'leto' => 2006,
         	'cena' => 9,
@@ -121,6 +131,7 @@ class ProductTableSeeder extends Seeder
         $product->save();
         $product = new \App\Product([
         	'imagePath' => 'slike/gogopenguin.jpg',
+            'artist_id' => 8,
         	'ime' => 'Man made Object',
         	'leto' => 2016,
         	'cena' => 16,
@@ -131,6 +142,7 @@ class ProductTableSeeder extends Seeder
         $product->save();
         $product = new \App\Product([
         	'imagePath' => 'slike/santogold.jpg',
+            'artist_id' => 9,
         	'ime' => 'Santogold',
         	'leto' => 2008,
         	'cena' => 14,
@@ -141,6 +153,7 @@ class ProductTableSeeder extends Seeder
         $product->save();
         $product = new \App\Product([
         	'imagePath' => 'slike/galacticmelt.jpg',
+            'artist_id' => 10,
         	'ime' => 'Galactic Melt',
         	'leto' => 2011,
         	'cena' => 13,
@@ -151,6 +164,7 @@ class ProductTableSeeder extends Seeder
         $product->save();
         $product = new \App\Product([
         	'imagePath' => 'slike/leviathan.jpg',
+            'artist_id' => 11,
         	'ime' => 'Leviathan',
         	'leto' => 2004,
         	'cena' => 18,

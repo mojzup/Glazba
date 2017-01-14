@@ -19,7 +19,7 @@
 						<div class="artikelPodatki2">
 							<div><label class="artikelOznaka">Cena:</label><label class="artikelCena">{{$product->cena}}€</label></div>
 							<div class="flex-col"><a href="{{ route('dodajvkosaro', ['id' => $product->id])}}" class="gumb modr artikel">Dodaj v košarico</a>
-							<a href="{{ route('dodajvzelje', ['id' => $product->id])}}" class="gumb svmodr artikel">Dodaj na seznam želja</a></div>
+							</div>
 						</div>
 					</div>
 				</div>

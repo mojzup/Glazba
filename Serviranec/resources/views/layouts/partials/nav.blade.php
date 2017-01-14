@@ -15,7 +15,6 @@
                              <?php $user = Auth::user();?>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pozdravljena, {{ Auth::user()->name }} <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/zelje') }}">Seznam želja</a></li>
                                 <li><a href="{{ url('/zgodovina') }}">Zgodovina</a></li>
                                 <li><a href="{{ URL::to("nastavitve/$user->name") }}">Nastavitve</a></li>
                                     <li><a href="{{ url('/logout') }}" onclick="event.preventDefault();

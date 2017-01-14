@@ -27,6 +27,18 @@ class UsersController extends Controller
    			$user->imagePath = $filename;
    			
   		}
+      $this->validate($request, [
+        'imepriimek' => 'max:255',
+        'ulica' => 'max:255',
+        'posta' => 'max:255',
+        'drzava' => 'max:255',
+        'KREDnosilec' => 'max:255',
+        'KREDstevilka' => 'min:16|max:15',
+        'KREDmesec' => 'max:1|max:2',
+        'KREDleto' => 'min:4|max:4', 
+        'KREDvarnost' => 'min:3|max:3',
+        'psw' => 'min:6',       
+            ]);
   		$user->imepriimek = $request['imepriimek'];
   		$user->ulica = $request['ulica'];
   		$user->posta = $request['posta'];
@@ -36,6 +48,8 @@ class UsersController extends Controller
   		$user->KREDmesec = $request['KREDmesec'];
   		$user->KREDleto = $request['KREDleto'];
   		$user->KREDvarnost = $request['KREDvarnost'];
+     if ($request->has('psw')) 
+        $user->password = bcrypt($request['psw']);
   		$user->update();
    	return view('pages.nastavitve', array('user' => Auth::user()), compact('user'));
 	}

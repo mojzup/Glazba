@@ -13,12 +13,10 @@
 		  			<input type="file" name="prikazna">	
 	  			</div>
 				<h3>Spremeni geslo</h3>
-				<label>Staro geslo</label>
-				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nast" >
 				<label>Novo geslo</label>
 				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nastavitve" >
 				<label>Potrdi geslo</label>
-				<input type="password" placeholder="Vnesi geslo" name="psw" class="polje nastavitve" >
+				<input type="password" placeholder="Vnesi geslo" name="conpsw" class="polje nastavitve" >
 				<h3>Spremeni naslov</h3>
 				<label>Ime Priimek</label>
 				<input type="text" value="{{ $user->imepriimek}}" name="imepriimek" class="polje nastavitve" >

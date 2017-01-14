@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c5bc6806b300f981daf912f5afd6fc9b",
-    "content-hash": "fd09d4e4413f4c403578396c35dc7f6f",
+    "hash": "ffc6f9807997035883369bec48757e71",
+    "content-hash": "e1cf5434662fa612ca2ad3d5dac6792d",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -160,6 +160,57 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "gigablah/sphinxphp",
+            "version": "2.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gigablah/sphinxphp.git",
+                "reference": "6d5e97fdd33c1129ca372203d1330827c1cbc46c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gigablah/sphinxphp/zipball/6d5e97fdd33c1129ca372203d1330827c1cbc46c",
+                "reference": "6d5e97fdd33c1129ca372203d1330827c1cbc46c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Sphinx": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Aksyonoff",
+                    "homepage": "http://sphinxsearch.com/"
+                }
+            ],
+            "description": "Sphinx Search PHP API",
+            "homepage": "http://sphinxsearch.com/",
+            "keywords": [
+                "api",
+                "search",
+                "sphinx"
+            ],
+            "time": "2013-08-22 08:05:44"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -1156,6 +1207,51 @@
                 "uuid"
             ],
             "time": "2016-11-22 19:21:44"
+        },
+        {
+            "name": "sngrl/sphinxsearch",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sngrl/sphinxsearch.git",
+                "reference": "1e0f891d06eeb7aa59c0d12db76f38afb062fda4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sngrl/sphinxsearch/zipball/1e0f891d06eeb7aa59c0d12db76f38afb062fda4",
+                "reference": "1e0f891d06eeb7aa59c0d12db76f38afb062fda4",
+                "shasum": ""
+            },
+            "require": {
+                "gigablah/sphinxphp": "2.0.8",
+                "illuminate/support": "~5.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "sngrl\\SphinxSearch": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "sngrl",
+                    "email": "reserved@mail.ru"
+                }
+            ],
+            "description": "Laravel package to query Sphinxsearch in Laravel 5",
+            "homepage": "http://github.com/sngrl/sphinxsearch",
+            "keywords": [
+                "laravel",
+                "laravel 5",
+                "sphinx",
+                "sphinxsearch"
+            ],
+            "time": "2016-06-22 08:45:38"
         },
         {
             "name": "stripe/stripe-php",
@@ -3676,7 +3772,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "sngrl/sphinxsearch": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

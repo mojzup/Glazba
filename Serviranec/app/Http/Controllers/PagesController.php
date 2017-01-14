@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use Order;
-
+use App\Order;
+use App\Artist;
+use App\Product;
 class PagesController extends Controller
 {
     public function home(){
@@ -42,6 +43,33 @@ class PagesController extends Controller
     }
    public function narocila(){
         $orders = Order::all();
-        return view('pages.narocila', ['orders' => $orders]));
+        $orders->transform(function($order, $key){
+                $order->cart = unserialize($order->cart);
+                return $order;
+            });
+        return view('pages.narocila', ['orders' => $orders]);
+   }
+   public function getNarocilo($id){
+        $order = Order::find($id);
+        $order->cart = unserialize($order->cart);
+
+        return view('pages.enonarocilo', ['order' => $order]);
+   }
+   public function postNarocilo(Request $request, $id){
+         $order = Order::find($id);
+         $order->name = $request['kupec'];
+        $order->address = $request['address'];
+        /*$order->cart->items
+        $product->leto = $request['leto'];
+        $product->cena = $request['cena'];
+        $product->format = $request['format'];
+        $product->opis = $request['opis'];*/
+        $order->update();
+        return view('pages.enonarocilo', ['order' => $order]);
+   }
+   public function getArtist($id){
+        $artist = Artist::find($id);
+        $products = Product::all();
+        return view('pages.izvajalec', ['artist' => $artist, 'products' => $products]);
    }
 }

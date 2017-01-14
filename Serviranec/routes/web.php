@@ -16,7 +16,12 @@ Route::get('/', [
 	'uses' => 'PagesController@home'
 	]);
 
-Route::get('/admin', 'PagesController@admin');
+Route::get('/admin', [
+    'uses' => 'PagesController@admin',
+    'as' => 'admin',
+    'middleware' => 'admin'
+    ]);
+
 
 Auth::routes();
 
@@ -35,7 +40,10 @@ Route::get('/artikel/{id}', [
     'uses' => 'ProductController@getProduct',
     'as' => 'product.index'
     ]);
-
+Route::get('/izvajalec/{id}', [
+    'uses' => 'PagesController@getArtist',
+    'as' => 'artist.index'
+    ]);
 Route::get('/kosarica', [
     'uses' => 'ProductController@getCart',
     'as' => 'pages.kosarica',
@@ -54,11 +62,17 @@ Route::get('/odstrani/{id}',[
     'as' => 'odstraniizkosare'
     
 ]);
+Route::get('/odstraninar/{order}/{id}',[
+    'uses' => 'ProductController@getRemoveItemOrder',
+    'as' => 'odstraniiznarocila'
+    
+]);
 Route::get('/blagajna', [
     'uses' => 'ProductController@getCheckout',
     'as' => 'checkout',
     'middleware' => 'auth'
 ]);
+
 Route::post('/blagajna', [
     'uses' => 'ProductController@postCheckout',
     'as' => 'checkout',
@@ -77,16 +91,40 @@ Route::post('/nastavitve/{username}', [
 Route::get('/artikelnov', 'ProductController@getArtikelnov');
 Route::post('/artikelnov', [
     'uses' =>'ProductController@nov',
-    'as' =>'artikelnov'
+    'as' =>'artikelnov',
+    'middleware' => 'admin'
     ]);
-Route::get('/adminzbirka', 'ProductController@getZbirkaadmin');
+Route::get('/adminzbirka', [
+   'uses' => 'ProductController@getZbirkaadmin',
+   'as' => 'adminzbirka',
+   'middleware' => 'admin'
+    ]);
 
 Route::get('/artikeluredi/{id}', [
     'uses' => 'ProductController@getArtikeluredi',
-    'as' => 'artikeluredi'
+    'as' => 'artikeluredi',
+    'middleware' => 'admin'
     ]);
 Route::post('/artikeluredi/{id}', [
     'uses' =>'ProductController@postArtikeluredi',
-    'as' =>'artikeluredi'
+    'as' =>'artikeluredi',
+    'middleware' => 'admin'
     ]);
-Route::narocila('/narocila', 'PagesController@narocila');
+Route::get('/narocila', [
+    'uses' => 'PagesController@narocila',
+    'as' => 'narocila',
+    'middleware' => 'admin'
+    ]);
+
+Route::get('/narocilo/{id}', 
+    [
+    'uses' => 'PagesController@getNarocilo',
+    'as' => 'preglednarocilo',
+    'middleware' => 'admin'
+    ]);
+Route::post('/narocilo/{id}', 
+    [
+    'uses' => 'PagesController@postNarocilo',
+    'as' => 'preglednarocilo',
+    'middleware' => 'admin'
+    ]);

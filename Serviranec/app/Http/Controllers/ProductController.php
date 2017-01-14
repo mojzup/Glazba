@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Product;
 use App\Order;
+use App\Artist;
 use Illuminate\Http\Request;
 use Image;
 use App\Http\Requests;
@@ -35,7 +36,8 @@ class ProductController extends Controller
     public function getIndex()
     {
         $products = Product::all();
-        return view('pages.zbirka', ['products' => $products]);
+         $artists = Artist::all();
+        return view('pages.zbirka', ['products' => $products, 'artists' => $artists]);
     }
        public function getZbirkaadmin(){
         $products = Product::all();
@@ -57,8 +59,9 @@ class ProductController extends Controller
         $cart->add($product, $product->id);
 
         $request->session()->put('cart', $cart);
-        return redirect()->route('zbirka.index');
+        return redirect()->back();
     }
+
 
     public function getRemoveItem($id) {
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
@@ -73,6 +76,11 @@ class ProductController extends Controller
 
         return redirect()->route('pages.kosarica');
     }
+   /* public function getRemoveItemOrder($order, $id){
+        $order->cart->remove($id);
+        $order->cart->items
+        return view('pages.enonarocilo');
+    }*/
     public function getCart() {
         if (!Session::has('cart')) {
             return view('pages.kosarica');
@@ -128,7 +136,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         return view('pages.artikeluredi', ['product' => $product]);
     }
-       public function postArtikeluredi(Request $request, $id){
+    public function postArtikeluredi(Request $request, $id){
         if ($request->hasFile('file')){
             $prikazna = $request->file('file');
             $filename = time() .  '.' . $prikazna->getClientOriginalExtension();

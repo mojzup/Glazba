@@ -23,7 +23,7 @@
 						<label>Ulica in hišna številka</label>
 						<input type="text"  value="{{ $user->ulica}}" name="address" class="polje" required>
 						<label>Pošta in poštna številka</label>
-						<input type="text" value="{{ $user->posta}}" name="uname" class="polje" required>
+						<input type="text" value="{{ $user->posta}}" name="posta" class="polje" required>
 						<label>Država</label>
 						<input type="text" value="{{ $user->drzava}}" name="uname" class="polje" required>
 					</div>

@@ -51,12 +51,17 @@
 		</div>
 		<div class="seznam flex-col">
 			@foreach($products as $product)
+			@foreach($artists as $artist)
+				@if ($artist->id === $product->artist_id)
+                                <?php $var = $artist; ?>
+                            @endif
+			@endforeach
 			<div class="artikel-posamezen flex-row">
 				<a href="{{ route('product.index', ['id' => $product->id])}}">
 	  			<img src="{{ $product->imagePath}}" alt="{{$product->ime}}" style="width:150px;height:150px;">
 				</a>
 				<div class="artikel-podrobnosti flex-col-sp-around">
-					<a href="izvajalec2.html" class="link izvajalec artikel">Orchid</a>
+					<a href="{{ route('artist.index', ['id' => $var->id])}}" class="link izvajalec artikel">{{$var->ime}}</a>
 					<div><a href="{{ route('product.index', ['id' => $product->id])}}" class="link album artikel">{{$product->ime}}</a><label class="artikel-leto"> ({{$product->leto}})</label></div>	
 					<div class="artikel-cena">{{$product->cena}}€</div>
 					<form>
