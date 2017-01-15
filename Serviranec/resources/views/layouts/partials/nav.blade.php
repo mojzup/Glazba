@@ -2,8 +2,10 @@
 	<div class="glavca flex-center">
 		<div class="block"><a href="{{ url('/') }}"><img src="/slike/logo2.png" alt="Glazba"></a></div>
 		<div class="search-box flex-row">
-			<div class="stretch"><input type="search" name="iskalnik" class="polje"><a href=""></a></div>
+	
+			<div class="stretch"><input type="search" name="iskalnik" id="serc" class="polje" onkeydown="down()" onkeyup="up()"><a href=""></a></div>
 			<div class="normal"><input type="image" src="/slike/magglass.png" alt="Išči" class="gumb oranzen"/></div>
+
 		</div>
 		<div class="block prij"> 
 			  @if (Auth::guest())

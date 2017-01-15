@@ -31,6 +31,7 @@ Route::get('/zvrsti', 'PagesController@zanri');
 Route::get('/blagajna', 'PagesController@blagajna');
 Route::get('/zelje', 'PagesController@zelje');
 Route::get('/zgodovina', 'PagesController@zgodovina');
+
 Route::get('/zbirka', [
     'uses' => 'ProductController@getIndex',
     'as' => 'zbirka.index'
@@ -123,4 +124,21 @@ Route::post('/narocilo/{id}',
     'uses' => 'PagesController@postNarocilo',
     'as' => 'preglednarocilo',
     'middleware' => 'admin'
+    ]);
+
+Route::get('/zbirka-ime-pad',[
+    'uses' => 'ResultController@imepad',
+    'as' => 'imepad'
+    ]);
+Route::get('/zbirka-ime-nar',[
+    'uses' => 'ResultController@imenar',
+    'as' => 'imenar'
+    ]);
+Route::get('/zbirka-cen-nar',[
+    'uses' => 'ResultController@cennar',
+    'as' => 'cennar'
+    ]);
+Route::get('/zbirka-cen-pad',[
+    'uses' => 'ResultController@cenpad',
+    'as' => 'cenpad'
     ]);

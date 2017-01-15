@@ -10,12 +10,12 @@
 		<div class="block"></div>
 		<div class="razvrsti select">
 			<label>Razvrsti po:</label>
-			<select>
-					<option value="volvo">Cena - padajoče</option>
-					<option value="saab">Cena - naraščajoče</option>
-					<option value="opel">Ime - padajoče</option>
-					<option value="audi">Ime - naraščajoče</option>
-			</select>
+			<div class="flex-row">
+			<a href="{{ route('imepad')}}" class="gumb">Ime - padajoče</a>
+			<a href="{{ route('imenar')}}" class="gumb">Ime - naraščajoče</a>
+			<a href="{{ route('cenpad')}}" class="gumb">Cena - padajoče</a>
+			<a href="{{ route('cennar')}}" class="gumb">Cena - naraščajoče</a>
+			</div>
 		</div>
 		<div class="block"></div>
 	</div>
@@ -68,10 +68,13 @@
 					<a href="{{ route('dodajvkosaro', ['id' => $product->id])}}" class="gumb oranzen sez">Dodaj v košarico</a></form>
 				</div>
 			</div>
+
 			@endforeach
 		</div>
-		<div class="block"></div>
+		
 	</div>
+
+
 	</div>
 	@include('layouts.partials.foot')
 @stop

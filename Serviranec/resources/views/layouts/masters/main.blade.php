@@ -8,6 +8,7 @@
 		<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
 		<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/razvrstiPo.js') }}"></script>
 	</head>
 	<body >
 		@yield('page-content')
