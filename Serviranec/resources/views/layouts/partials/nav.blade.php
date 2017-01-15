@@ -10,10 +10,10 @@
 			</div>
 		</div>{!!Form::close()!!}
 		<div class="block prij"> 
-			  @if (Auth::guest())
-                            <a href="{{ url('/login') }}">Prijava</a>
-                            <label>|</label>
-                            <a href="{{ url('/register') }}">Registracija</a>
+		@if (Auth::guest())
+            <a href="{{ url('/login') }}">Prijava</a>
+            <label>|</label>
+            <a href="{{ url('/register') }}">Registracija</a>
                         @else
                              <li class="dropdown">
                              <?php $user = Auth::user();?>
@@ -44,10 +44,3 @@
 		</div>	
 	</div>
 </div>
-<script type="text/javascript">
- $('#searchname').autocomplete({
- 	source : '{!! URL::route('autocomplete')!!}',
- 	minlength:1,
- 	autoFocus:true.
- });
-</script>

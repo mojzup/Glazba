@@ -25,7 +25,7 @@
 				@foreach ($products as $product)
 					@if ($product->artist_id === $artist->id)
 					<div class="artikel-posamezen flex-row">
-						<a href="artikel.html">
+						<a href="{{ route('product.index', ['id' => $product->id])}}">
 			  			<img src="/{{$product->imagePath}}" alt="{{$product->ime}}" style="width:150px;height:150px;">
 						</a>
 						<div class="artikel-podrobnosti flex-col-sp-around">

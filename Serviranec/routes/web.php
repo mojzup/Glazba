@@ -36,7 +36,10 @@ Route::get('/zbirka', [
     'uses' => 'ProductController@getIndex',
     'as' => 'zbirka.index'
 ]);
-Route::get('/autocomplete', array('as' => 'autocomplete', 'uses' =>'SearchController@autocomplete')); 
+Route::get('/zbirka', [
+    'uses' =>'Api\SearchController@search',
+    'as' => 'zbirka.index'
+    ]); 
 
 Route::get('/artikel/{id}', [
     'uses' => 'ProductController@getProduct',
@@ -142,4 +145,12 @@ Route::get('/zbirka-cen-nar',[
 Route::get('/zbirka-cen-pad',[
     'uses' => 'ResultController@cenpad',
     'as' => 'cenpad'
+    ]);
+Route::get('/zbirka-cd',[
+    'uses' => 'ResultController@cd',
+    'as' => 'cd'
+    ]);
+Route::get('/zbirka-lp',[
+    'uses' => 'ResultController@lp',
+    'as' => 'lp'
     ]);

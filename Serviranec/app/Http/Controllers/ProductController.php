@@ -6,6 +6,7 @@ use App\Cart;
 use App\Product;
 use App\Order;
 use App\Artist;
+use App\Song;
 use Illuminate\Http\Request;
 use Image;
 use App\Http\Requests;
@@ -18,17 +19,27 @@ class ProductController extends Controller
 {
 
     public function nov(Request $request){
-       /* if ($request->hasFile('file')){
-            $prikazna = $request->file('file');
-            $filename = time() .  '.' . $prikazna->getClientOriginalExtension();
-            Image::make($prikazna)->resize(150,150)->save(public_path('/slike/'.$filename) );
-           $userser->imagePath = $filename;    
-        }*/
+        
         $product = new Product;
+        $this->validate($request, [
+        'ime' => 'max:255',
+        'cena' => 'max:2',
+        'format' => 'max:1',
+        'opis' => 'max:500', 
+        'leto' => 'max:4',    
+            ]);
         $product->ime = $request->ime;
+         $product->artist_id = $request->izvajalec;
         $product->cena = $request->cena;
+        $product->leto = $request->leto;
         $product->format = $request->format;
         $product->opis = $request->opis;
+        if ($request->hasFile('file')){
+            $prikazna = $request->file('file');
+            $filename = time() .  '.' . $prikazna->getClientOriginalExtension();
+            Image::make($prikazna)->resize(150,150)->save(public_path('/slike/$filename') );
+           $product->imagePath = $filename;    
+        }
         $product->save();
         return view('pages.admin');
     }
@@ -41,13 +52,15 @@ class ProductController extends Controller
     }
        public function getZbirkaadmin(){
         $products = Product::all();
-         return view('pages.adminzbirka', ['products' => $products]);
+        $artists = Artist::all();
+        return view('pages.adminzbirka', ['products' => $products, 'artists' => $artists]);
    }
     public function getProduct($id)
     {
+        $songs = Song::all();
          $artists = Artist::all();
         $product = Product::find($id);
-        return view('pages.artikel', ['product' => $product, 'artists' => $artists]);
+        return view('pages.artikel', ['product' => $product, 'artists' => $artists, 'songs' => $songs]);
     }
     public function getAddToWishlist($id){
         $product = Product::find($id);
@@ -77,11 +90,6 @@ class ProductController extends Controller
 
         return redirect()->route('pages.kosarica');
     }
-   /* public function getRemoveItemOrder($order, $id){
-        $order->cart->remove($id);
-        $order->cart->items
-        return view('pages.enonarocilo');
-    }*/
     public function getCart() {
         if (!Session::has('cart')) {
             return view('pages.kosarica');
@@ -140,6 +148,15 @@ class ProductController extends Controller
         return view('pages.artikeluredi', ['product' => $product]);
     }
     public function postArtikeluredi(Request $request, $id){
+        
+        $product = Product::find($id);
+        $this->validate($request, [
+        'ime' => 'max:255',
+        'cena' => 'max:2',
+        'format' => 'max:1',
+        'opis' => 'max:500', 
+        'leto' => 'max:4',    
+            ]);
         if ($request->hasFile('file')){
             $prikazna = $request->file('file');
             $filename = time() .  '.' . $prikazna->getClientOriginalExtension();
@@ -149,9 +166,7 @@ class ProductController extends Controller
             $product->imagePath = $filename;
             
         }
-        $product = Product::find($id);
         $product->artist_id = $request['izvajalec'];
-        $product->zanr_id = $request['zvrst'];
         $product->ime = $request['ime'];
         $product->leto = $request['leto'];
         $product->cena = $request['cena'];

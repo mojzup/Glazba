@@ -22,6 +22,7 @@ class UsersController extends Controller
    			$prikazna = $request->file('prikazna');
    			$filename = time() .  '.' . $prikazna->getClientOriginalExtension();
    			Image::make($prikazna)->resize(150,150)->save(public_path('/slike/avatarji/'.$filename) );
+  
 
    			
    			$user->imagePath = $filename;
@@ -33,11 +34,10 @@ class UsersController extends Controller
         'posta' => 'max:255',
         'drzava' => 'max:255',
         'KREDnosilec' => 'max:255',
-        'KREDstevilka' => 'min:16|max:15',
-        'KREDmesec' => 'max:1|max:2',
-        'KREDleto' => 'min:4|max:4', 
-        'KREDvarnost' => 'min:3|max:3',
-        'psw' => 'min:6',       
+        'KREDstevilka' => 'max:16',
+        'KREDmesec' => 'max:2',
+        'KREDleto' => 'max:4', 
+        'KREDvarnost' => 'max:3',      
             ]);
   		$user->imepriimek = $request['imepriimek'];
   		$user->ulica = $request['ulica'];

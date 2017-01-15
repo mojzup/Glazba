@@ -17,10 +17,6 @@
 					<div class="artikelPodatki album flex-col-sp-between">
 						<div><label class="artikelIme">{{$product->ime}}</label><label>({{$product->leto}})</label></div>
 						<a href="{{ route('artist.index', ['id' => $var->id])}}" class="link izvajalec album">{{$var->ime}}</a>
-						<form>
-		  					<label class="artikelOznaka druga">Količina:</label>
-		  					<input type="text" name="quantity"  pattern="[0-9]{1,2}" class="polje artikel">
-						</form>
 						<div class="artikelPodatki2">
 							<div><label class="artikelOznaka">Cena:</label><label class="artikelCena">{{$product->cena}}€</label></div>
 							<div class="flex-col"><a href="{{ route('dodajvkosaro', ['id' => $product->id])}}" class="gumb modr artikel">Dodaj v košarico</a>
@@ -34,26 +30,19 @@
 				<label class="pesmioznaka">Seznam pesmi</label>
 				<div class=" pesmivse flex-sp-between">
 					<ol class="pesmi">
-						<li>Mouths of Madness</li>
-						<li>Marching Dogs of War</li>
-						<li>Silent One</li>
-						<li>Nomad</li>
-						<li>Mountains of Steel</li>
-						<li>Leaving It All Behind</li>
-						<li>Loving Hand of God</li>
-						<li>Wizard of War</li>
-						<li>See You on the Other Side</li>
+					@foreach ($songs as $song)
+					@if ($song->product_id === $product->id)
+						<li>{{$song->ime}}</li>
+					@endif
+					@endforeach
 					</ol>
 					<ul class="pesmi">
-						<li>5:50</li>
-						<li>5:29</li>
-						<li>7:25</li>
-						<li>6:21</li>
-						<li>6:57</li>
-						<li>7:20</li>
-						<li>6:10</li>
-						<li>3:19</li>
-						<li>7:16</li>
+					@foreach ($songs as $song)
+					@if ($song->product_id === $product->id)
+						<li>{{$song->dolzina}}</li>
+					@endif
+						@endforeach
+
 					</ul>
 				</div>
 			</div>

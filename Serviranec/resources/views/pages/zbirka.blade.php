@@ -8,19 +8,22 @@
 	<h2>Zbirka</h2>
 	<div class="flex-end">
 		<div class="block"></div>
-		<div class="razvrsti select">
-			<label>Razvrsti po:</label>
-			<div class="flex-row">
-			<a href="{{ route('imepad')}}" class="gumb">Ime - padajoče</a>
-			<a href="{{ route('imenar')}}" class="gumb">Ime - naraščajoče</a>
-			<a href="{{ route('cenpad')}}" class="gumb">Cena - padajoče</a>
-			<a href="{{ route('cennar')}}" class="gumb">Cena - naraščajoče</a>
-			</div>
-		</div>
 		<div class="block"></div>
 	</div>
 	<div class="flex-row">
-
+		<div class="filtri flex-col">
+				
+					<div class="tip-filtra flex-col"><label class="filter-naslov">Format</label>
+					<div><a href="{{ route('cd')}}" class="gumb modr filtr">CD</a></div>
+					<div><a href="{{ route('lp')}}" class="gumb modr filtr">LP/Vinil</a></div>
+					</div>
+					<div class="tip-filtra flex-col"><label class="filter-naslov">Razvrsti</label>
+					<div><a href="{{ route('imepad')}}" class="gumb modr filtr">Ime - padajoče</a></div>
+			<div><a href="{{ route('imenar')}}" class="gumb modr filtr">Ime - naraščajoče</a></div>
+			<div><a href="{{ route('cenpad')}}" class="gumb modr filtr">Cena - padajoče</a></div>
+			<div><a href="{{ route('cennar')}}" class="gumb modr filtr">Cena - naraščajoče</a></div>
+					</div>
+				</div>
 		<div class="seznam flex-col" >
 			@foreach($products as $product)
 			@foreach($artists as $artist)
@@ -43,9 +46,9 @@
 
 			@endforeach
 		</div>
+
 		
 	</div>
-
 
 	</div>
 	@include('layouts.partials.foot')

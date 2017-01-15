@@ -4,7 +4,6 @@
 		<div class="domacaAdmin">
 				<div class="razdelek">
 				<h3>Izdelki</h3>
-				<form><input type="search" name="iskalnik" class="polje"><a href="" class="gumb oranzen">Išči</a></form>
 				<a class="gumb modr admin" href="{{ url('/adminzbirka') }}">Vsi izdelki</a>
 				<a class="gumb svmodr admin" href="{{ url('/artikelnov') }}">Nov izdelek</a>
 				</div>

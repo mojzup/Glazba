@@ -22,8 +22,6 @@
 						<input type="text" name="ime" class="polje nastavitve" value="{{ $product->ime}}" required>
 						<label class="labela">Izvajalec ID</label>
 						<input type="text" name="izvajalec" class="polje nastavitve" value="{{ $product->artist_id}}" required>
-						<label class="labela">Zvrst ID</label>
-						<input type="text" name="zvrst" class="polje nastavitve" value="{{ $product->zanr_id}}">
 						<label class="labela">Leto</label>
 						<input type="text" name="leto" class="polje nastavitve" value="{{ $product->leto}}">
 						<label class="labela">Cena</label>
