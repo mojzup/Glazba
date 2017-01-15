@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+//GET: api/search this route is responsible for handling search requests
+Route::get('/search', 'Api\SearchController@search');

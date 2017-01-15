@@ -1,12 +1,14 @@
 <div class="header">
 	<div class="glavca flex-center">
 		<div class="block"><a href="{{ url('/') }}"><img src="/slike/logo2.png" alt="Glazba"></a></div>
+		{!!Form::open(['route' => 'zbirka.index', 'method' => 'GET', 'role' => 'search'])!!}
 		<div class="search-box flex-row">
-	
-			<div class="stretch"><input type="search" name="iskalnik" id="serc" class="polje" onkeydown="down()" onkeyup="up()"><a href=""></a></div>
-			<div class="normal"><input type="image" src="/slike/magglass.png" alt="Išči" class="gumb oranzen"/></div>
-
-		</div>
+			<div class="stretch">
+			{!!Form::text('term', Request::get('term'), ['class' => 'polje', 'placeholder' => 'Kaj iščete danes?'])!!}
+			</div>
+			<div class="normal"><input type="image" src="/slike/magglass.png" alt="Išči" v-if="!loading" class="gumb oranzen" />
+			</div>
+		</div>{!!Form::close()!!}
 		<div class="block prij"> 
 			  @if (Auth::guest())
                             <a href="{{ url('/login') }}">Prijava</a>
@@ -42,3 +44,10 @@
 		</div>	
 	</div>
 </div>
+<script type="text/javascript">
+ $('#searchname').autocomplete({
+ 	source : '{!! URL::route('autocomplete')!!}',
+ 	minlength:1,
+ 	autoFocus:true.
+ });
+</script>

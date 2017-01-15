@@ -20,36 +20,8 @@
 		<div class="block"></div>
 	</div>
 	<div class="flex-row">
-		<div class="filtri flex-col">
-			<div class="tip-filtra flex-col"><label class="filter-naslov">Kategorija</label>
-				<div><input type="checkbox" name="izvajalec" value="Izvajalec" class="as"><label> Izvajalec</label></div>
-				<div><input type="checkbox" name="album" value="Album"><label> Album</label></div>
-				<div><input type="checkbox" name="pesem" value="Pesem"><label> Pesem</label></div>
-				<div><input type="checkbox" name="žanr" value="Žanr"><label> Žanr</label></div>
-			</div>
-			<div class="tip-filtra flex-col"><label class="filter-naslov">Format</label>
-				<div><input type="checkbox" name="cd" value="CD"><label> CD</label></div>
-				<div><input type="checkbox" name="lp" value="LP"><label> LP/Vinil</label></div>
-			</div>
-			<div class="tip-filtra flex-col"><label class="filter-naslov">Leto izdaje</label>
-				<div class="razpon">
-				 	<div><form><input type="text" name="leto1" pattern="[0-9]{4}" maxlength="4" minlength="4" class="polje"> - <input type="text" name="leto2" pattern="[0-9]{4}" maxlength="4" minlength="4" class="polje"></form></div>
-				</div>
-			</div>
-			<div class="tip-filtra flex-col"><label class="filter-naslov">Žanr</label>
-				<div><input type="checkbox" name="rock" value="Rock"><label> Rock</label></div>
-				<div><input type="checkbox" name="pop" value="Pop"><label> Pop</label></div>
-				<div><input type="checkbox" name="jazz" value="Jazz"><label> Jazz</label></div>
-				<div><input type="checkbox" name="klasika" value="Klasika"><label> Klasika</label></div>
-			</div>
-			<div class="tip-filtra flex-col"><label class="filter-naslov">Cena</label>
-				<div class="razpon">
-				 	<div><form><input type="text" name="cena1" pattern="[0-9]{0,}" class="polje"> - <input type="text" name="cena2" pattern="[0-9]{0,}" class="polje"></form></div>
-				</div>
-			</div>
-			<div><input type="submit" value="Filtriraj" class="gumb modr filtr"></div>
-		</div>
-		<div class="seznam flex-col">
+
+		<div class="seznam flex-col" >
 			@foreach($products as $product)
 			@foreach($artists as $artist)
 				@if ($artist->id === $product->artist_id)

@@ -36,6 +36,7 @@ Route::get('/zbirka', [
     'uses' => 'ProductController@getIndex',
     'as' => 'zbirka.index'
 ]);
+Route::get('/autocomplete', array('as' => 'autocomplete', 'uses' =>'SearchController@autocomplete')); 
 
 Route::get('/artikel/{id}', [
     'uses' => 'ProductController@getProduct',
