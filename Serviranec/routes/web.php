@@ -24,12 +24,7 @@ Route::get('/admin', [
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');
 Route::get('/izvajalci', 'PagesController@izvajalci');
-Route::get('/zvrsti', 'PagesController@zanri');
-Route::get('/blagajna', 'PagesController@blagajna');
-Route::get('/zelje', 'PagesController@zelje');
 Route::get('/zgodovina', 'PagesController@zgodovina');
 
 Route::get('/zbirka', [
@@ -57,10 +52,6 @@ Route::get('/kosarica', [
 Route::get('/dodaj-v-kosarico/{id}', [
     'uses' => 'ProductController@getAddToCart',
     'as' => 'dodajvkosaro'
-]);
-Route::get('/dodaj-v-zelje/{id}', [
-    'uses' => 'ProductController@getAddToWishlist',
-    'as' => 'dodajvzelje'
 ]);
 Route::get('/odstrani/{id}',[
     'uses' => 'ProductController@getRemoveItem',
